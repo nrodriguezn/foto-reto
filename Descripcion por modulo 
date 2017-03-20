@@ -1,0 +1,38 @@
+Funcionalidades
+
+La aplicacion se enfoca en fotografos, quienes suben sus fotografias para
+competir anonimamente entre ellos, luego de esto, las fotos son puntuadas estilo
+facebook o instagram, con likes, quienes participan semanalmente para triunfar y
+acomular "puntos" con los cuales despues pueden optar a ser contratados.
+
+
+De que se trata el Foto Reto
+  El fotoreto, consta basicamente en que los usuarios, publican sus fotografias (sin poder
+  borrarlas posteriormente) para participar en un concurso fotografico con un tema, este,
+  se presenta cada dia lunes a las 5:00am con un video, donde se explica cual es el reto y ademas
+  se muestra un tip o tutorial para lograrlo de la mejor manera, de esta forma, el forografo
+  aprende y participa intentando conseguir la mejor puntuacion posible, el reto durará
+  desde el lunes a las 5:00 am hasta el dia domingo a las 19:00hrs, donde se cerrará el
+  fotoreto y se mostrarán los ganadores, quienes serán elegidos por eleccion popular.
+  Las fotos iran apareciendo en el menu inicio de la plataforma, de manera anonima para que
+  todo usuario tenga la oportunidad de sobresalir.
+
+
+
+Requerimientos, por modulos. explica la funcionalidad que le entregaremos a cada modulo.
+
+
+
+Usuario
+  Registrarse, Login, Actualizarse, acceder a su perfil.
+
+Fotografo.
+  Participar en foto reto, recibir contratos o solicitudes, publicar fotos, ver sus fotos,
+
+Foto
+  Evaluar fotografia, Modificar comentarios fotografia.
+
+Reto
+  Publicacion de video con fotoreto y tutorial, participantes, Se maneja el concurso como tal,
+
+Ganadores
