@@ -9,4 +9,5 @@
 /build/
 /vendor/
 /bin/
-/composer.phar
+/composer.pha
+/.DS_Store
