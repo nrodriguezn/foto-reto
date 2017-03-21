@@ -1,12 +1,14 @@
-Funcionalidades
+
+INTRODUCCION
 
 La aplicacion se enfoca en fotografos, quienes suben sus fotografias para
 competir anonimamente entre ellos, luego de esto, las fotos son puntuadas estilo
 facebook o instagram, con likes, quienes participan semanalmente para triunfar y
-acomular "puntos" con los cuales despues pueden optar a ser contratados.
+acumular "puntos" con los cuales despues pueden optar a ser contratados.
 
 
-De que se trata el Foto Reto
+DE QUE SE TRATA FOTORETO?
+
   El fotoreto, consta basicamente en que los usuarios, publican sus fotografias (sin poder
   borrarlas posteriormente) para participar en un concurso fotografico con un tema, este,
   se presenta cada dia lunes a las 5:00am con un video, donde se explica cual es el reto y ademas
@@ -18,21 +20,21 @@ De que se trata el Foto Reto
   todo usuario tenga la oportunidad de sobresalir.
 
 
+MODULOS
 
-Requerimientos, por modulos. explica la funcionalidad que le entregaremos a cada modulo.
-
+A continuación se presentan los módulos identificados para el desarrollo de la api.
 
 
 Usuario
-  Registrarse, Login, Actualizarse, acceder a su perfil.
+  Este módulo entrega la gestión de un usuario, como es el registro, login, acceso al perfil de usuario, gestión de ofertas laborales.
 
-Fotografo.
-  Participar en foto reto, recibir contratos o solicitudes, publicar fotos, ver sus fotos,
+Foto 
+  Este módulo realiza la gestión de la fotografía, es decir, su inscripćión en el FotoReto y los resultados obtenidos de esta.
 
-Foto
-  Evaluar fotografia, Modificar comentarios fotografia.
+FotoReto
+  Este módulo manipula los concursos que se publiquen, así como lo son sus tutoriales, resultados y procesos.
+  Entiéndase por proceso las acciones que se deben realizar para llevarlo a cabo, recepción de participantes, 
+  ejecución del concurso(puntuación y muestra de fotos), determinación de ganadores, publicación de resultados.
 
-Reto
-  Publicacion de video con fotoreto y tutorial, participantes, Se maneja el concurso como tal,
-
-Ganadores
+Trabajo
+  Este módulo debe permitir ver a empleadores un ranking de fotografos, otorgando la posibilidad de realizar una oferta de trabajo.
