@@ -15,6 +15,13 @@ class CreateDirectionsTable extends Migration
     {
         Schema::create('directions', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('id_user');
+            $table->string('country');
+            $table->string('province');
+            $table->string('region');
+            $table->string('commune');
+            $table->string('street');
+            $table->string('number');
             $table->timestamps();
         });
     }

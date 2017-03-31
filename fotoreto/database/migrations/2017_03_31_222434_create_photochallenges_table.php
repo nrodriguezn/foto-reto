@@ -15,6 +15,10 @@ class CreatePhotochallengesTable extends Migration
     {
         Schema::create('photochallenges', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('name');
+            $table->string('description');
+            $table->string('url_video');
+            $table->date('end_date');
             $table->timestamps();
         });
     }
