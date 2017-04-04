@@ -18,3 +18,11 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
+
+//Route::resource('/noticias', 'Noticias'); //adquiere los metodos del controlador y los convierte en rutas
+
+Route::resource('/photochallenge', 'photochallengeController');
+Route::resource('/user', 'userController');
+Route::resource('/photo', 'photoController');
+Route::resource('/direction', 'directionController');
+Route::resource('/contract', 'contractController');
