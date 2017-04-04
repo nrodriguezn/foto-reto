@@ -1,128 +1,14 @@
-<!doctype html>
-
-<html lang="{{ config('app.locale') }}">
-
-<html class="no-js" lang="">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>FotoReto</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <link rel="apple-touch-icon" href="apple-touch-icon.png">
-        <link rel="stylesheet" href="css/HomeStyle.css"> <!--no delete-->
-	<!--[if lt IE 9]> <script src="js/html5shiv.js"></script>
-	<script src="js/respond.min.js"></script> <![endif]-->
-        <!-- Place favicon.ico in the root directory -->
-		<link href='https://fonts.googleapis.com/css?family=Lato:400,300,700' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" href="css/structure/normalize.css">
-        <link rel="stylesheet" href="css/structure/main.css">
-        <link rel="stylesheet" href="css/structure/bootstrap.min.css">
-        <link rel="stylesheet" href="css/structure/font-awesome.min.css">
-        <link rel="stylesheet" href="css/structure/owl.carousel.css">
-        <link rel="stylesheet" href="css/structure/responsive.css">
-        <link rel="stylesheet" href="css/structure/style.css">
-
-    </head>
-<body >
-		 <!-- start preloader -->
-        <div id="loader-wrapper">
-            <div class="logo"></div>
-            <div id="loader">
-            </div>
-        </div>
-    <!--end preloader -->
-        <!--[if lt IE 8]>
-            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
+@include('layouts/nab')
 
 
-<!-- Start Header Section -->
-<header class="main_menu_sec navbar navbar-default navbar-fixed-top">
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-3 col-md-3 col-sm-12">
-				<div class="lft_hd">
-					<a href="{{ url('/home') }}"><img src="{{ asset('images/fotoreto_logo.png') }}"  width=900 height=80/></a>
-				</div>
-			</div>
-			<div class="col-lg-9 col-md-9 col-sm-12">
-				<div class="rgt_hd">
-					<div class="main_menu">
-						<nav id="nav_menu">
-							<button aria-controls="navbar" aria-expanded="false" data-target="#navbar" data-toggle="collapse" class="navbar-toggle collapsed" type="button">
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-							</button>
-						<div id="navbar">
-							<ul>
-								<li><a class="page-scroll" href="{{ url('/home') }}">Inicio</a></li>
-							<li><a href="#">Tutoriales <i class="fa fa-angle-down"></i></a>
-							<ul>
-                <li><a href="#">Tripode</a></li>
-                <li><a href="#">Objetivo</a></li>
-                <li><a href="#">Enfoque</a></li>
-                <!--
-								<li><a class="page-scroll" href="#tm_sec">Our Team</a></li>
-								<li><a class="page-scroll" href="#tstm_sec">Our Testimonial</a></li>
-								<li><a class="page-scroll" href="#lts_sec">Our Latest Blog</a></li>
-								<li><a class="page-scroll" href="#pricing_sec">Pricing</a></li>
-								<li><a class="page-scroll" href="#clt_sec">Our Happy Client</a></li>
-              -->
-              </ul>
-							</li>
-
-							<li><a href="#">Productos<i class="fa fa-angle-down"></i></a>
-							<ul>
-								<li><a  href="#">Camaras</a></li>
-								<li><a  href="#">Accesorios</a></li>
-							</ul>
-							</li>
-
-								 <!--<li><a class="page-scroll" href="#abt_sec">Quienes Somos</a></li>
-								<li><a class="page-scroll" href="#skill_sec">Contratar</a></li>-->
-                <li><a  href="#">Quienes Somos</a></li>
-								<li><a  href="#">Contratar</a></li>
-                @if (Route::has('login'))
-                  @if (Auth::check())
-                    <li>    <a href="{{ url('/home') }}">Perfil</a></li>
-                  @else
-                    <li><a href="{{ url('/login') }}">Ingresar</a></li>
-                    <li><a href="{{ url('/register') }}">Registrarse</a></li>
-                  @endif
-                @endif
-
-							</ul>
-						</div>
-						</nav>
-					</div>
-
-				</div>
-			</div>
-		</div>
-	</div>
-<!--
-  <div class="flex-center position-ref full-height">
-      @if (Route::has('login'))
-          <div class="top-right links">
-              @if (Auth::check())
-                  <a href="{{ url('/home') }}">Home</a>
-              @else
-                  <a href="{{ url('/login') }}">Login</a>
-                  <a href="{{ url('/register') }}">Register</a>
-              @endif
-          </div>
-      @endif
-    </div>
-  -->
-</header>
-<!-- End Header Section -->
-
-
-
-<!-- start about Section -->
+<!-- start preloader -->
+   <div id="loader-wrapper">
+       <div class="logo"></div>
+       <div id="loader">
+       </div>
+   </div>
+<!--end preloader -->
+<!-- start about Section
 <section id="abt_sec">
 	<div class="container">
 		<div class="row">
@@ -140,9 +26,9 @@
 		</div>
 	</div>
 </section>
-<!-- End About Section -->
+End About Section -->
 
-<!-- start Counting section-->
+<!-- start Counting section
 <section id="counting_sec">
 <div class="container">
 	<div class="row">
@@ -178,9 +64,9 @@
 	</div>
 </div>
 </section>
+ end section-->
 
-
-<!-- start progress bar Section -->
+<!-- start progress bar Section
 <section id="skill_sec">
 	<div class="container">
 		<div class="row">
@@ -241,68 +127,11 @@
 		</div>
 	</div>
 </section>
-<!-- End progress bar Section -->
+End progress bar Section -->
 
-<!-- start Service Section -->
-<section id="pr_sec">
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-12 col-md-12 col-sm-12 col-xs12 ">
-				<div class="title_sec">
-					<h1>OUR Service</h1>
-					<h2>WE’RE BRANDING & DIGITAL STUDIO FROM VIET NAM</h2>
-				</div>
-			</div>
-			<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-				<div class="service">
-					<i class="fa fa-globe"></i>
-					<h2>web Development</h2>
-					<div class="service_hoverly">
-						<i class="fa fa-globe"></i>
-						<h2>web Development</h2>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore ab odio quas  , voluptate aspernatur!</p>
-					</div>
-				</div>
-			</div>
-			<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-				<div class="service">
-					<i class="fa fa-paper-plane"></i>
-					<h2>E-mail marketing</h2>
-					<div class="service_hoverly">
-						<i class="fa fa-paper-plane"></i>
-						<h2>E-mail marketing</h2>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore ab odio quas  , voluptate aspernatur!</p>
-					</div>
-				</div>
-			</div>
-			<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-				<div class="service">
-					<i class="fa fa-wordpress"></i>
-					<h2>WordPress</h2>
-					<div class="service_hoverly">
-						<i class="fa fa-wordpress"></i>
-						<h2>WordPress</h2>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore ab odio quas  , voluptate aspernatur!</p>
-					</div>
-				</div>
-			</div>
-			<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-				<div class="service">
-					<i class="fa fa-paint-brush"></i>
-					<h2>Graphic Design</h2>
-					<div class="service_hoverly">
-						<i class="fa fa-paint-brush"></i>
-						<h2>Graphic Design</h2>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore ab odio quas  , voluptate aspernatur!</p>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</section>
-<!-- End Service Section -->
 
-<!-- start portfolio Section -->
+
+<!-- start portfolio Section
 <section id="protfolio_sec">
 	<div class="container">
 		<div class="row">
@@ -396,9 +225,9 @@
 			</div>
 		</div>
 </section>
-<!-- End Portfolio Section -->
+End Portfolio Section -->
 
-<!-- start our team Section -->
+<!-- start our team Section
 <section id="tm_sec">
 	<div class="container">
 		<div class="row">
@@ -475,9 +304,9 @@
 		</div>
 	</div>
 </section>
-<!-- End our team Section -->
+ End our team Section -->
 
-<!-- start our teastimonial Section -->
+<!-- start our teastimonial Section
 <section id="tstm_sec">
 	<div class="container">
 		<div class="row">
@@ -531,10 +360,10 @@
 		</div>
 	</div>
 </section>
-<!-- End our teastimonial Section -->
+ End our teastimonial Section -->
 
 
-<!-- start Latest post Section -->
+<!-- start Latest post Section
 <section id="lts_sec">
 	<div class="container">
 		<div class="row">
@@ -577,9 +406,9 @@
 		</div>
 	</div>
 </section>
-<!-- End Latest post Section -->
+ End Latest post Section -->
 
-<!-- start pricing Section -->
+<!-- start pricing Section
 <section id="pricing_sec">
 	<div class="container">
 		<div class="row">
@@ -632,10 +461,10 @@
 		</div>
 	</div>
 </section>
-<!-- End pricing Section -->
+End pricing Section -->
 
 
-<!-- start Happy Client Section -->
+<!-- start Happy Client Section
 <section id="clt_sec">
 	<div class="container">
 		<div class="row">
@@ -680,9 +509,9 @@
 		</div>
 	</div>
 </section>
-<!-- End Happy Client  Section -->
+ End Happy Client  Section -->
 
-<!-- start contact us Section -->
+<!-- start contact us Section
 <section id="ctn_sec">
 	<div class="container">
 		<div class="row">
@@ -722,54 +551,10 @@
 		</div>
 	</div>
 </section>
-<!-- End contact us  Section -->
+End contact us  Section -->
 
-<!-- start located map Section -->
-<section id="ltd_map_sec">
-<div class="container">
-	<div class="row">
-		<div class="col-lg-12">
-			<div class="map">
-			<h1>located THE MAP</h1><a href="#slidingDiv" class="show_hide" rel="#slidingDiv"><i class="fa fa-angle-up"></i></a>
-			<div id="slidingDiv">
-				<div class="map_area">
-					<div id="googleMap" style="width:100%;height:300px;"></div>
-				</div>
-			</div>
-			</div>
-		</div>
-	</div>
-</div>
-</section>
 
-<!-- End located map  Section -->
-<!-- start footer Section -->
-<footer id="ft_sec">
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-12">
-				<div class="ft">
-					<ul>
-						<li><a href=""><i class="fa fa-facebook"></i></a></li>
-						<li><a href=""><i class="fa fa-twitter"></i></a></li>
-						<li><a href=""><i class="fa fa-dribbble"></i></a></li>
-						<li><a href=""><i class="fa fa-rss"></i></a></li>
-						<li><a href=""><i class="fa fa-flickr"></i></a></li>
-						<li><a href=""><i class="fa fa-pinterest"></i></a></li>
-						<li><a href=""><i class="fa fa-linkedin"></i></a></li>
-						<li><a href=""><i class="fa fa-skype"></i></a></li>
-						<li><a href=""><i class="fa fa-google"></i></a></li>
-					</ul>
-				</div>
-				<ul class="copy_right">
-					<li>&copy;Sima 2015</li>
-					<li>developer by md. shiddikur rahman</li>
-				</ul>
-			</div>
-		</div>
-	</div>
-</footer>
-<!-- End footer Section -->
+@include('layouts.footer')
 
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
         <script src="js/structure/vendor/jquery-1.11.2.min.js"></script>

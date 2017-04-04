@@ -13,7 +13,7 @@ class userController extends Controller
      */
     public function index()
     {
-        //
+        dd('user controller index');
     }
 
     /**
@@ -34,7 +34,7 @@ class userController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        dd('user controller');
     }
 
     /**

@@ -792,6 +792,10 @@ padding : 3px;
 background : none 0 0 repeat scroll #363636;
 text-align : center;
 }
+#footer_a {
+background : none 0 0 repeat scroll #363636;
+text-align : center;
+}
 .map > h1 {
 color : #fff;
 font-size : 20px;

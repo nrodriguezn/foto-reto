@@ -13,7 +13,7 @@ class contractController extends Controller
      */
     public function index()
     {
-        //
+        dd('contract controller index');
     }
 
     /**
