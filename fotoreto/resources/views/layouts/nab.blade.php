@@ -67,7 +67,7 @@
     								<li><a  href="#">Accesorios</a></li>
     							</ul>
     							</li>
-                    <li><a  href="#">Quienes Somos</a></li>
+                    <li><a  href="{{ url('/contact') }}">Quienes Somos</a></li>
     								<li><a  href="{{ url('/contract') }}">Contratar</a></li>
                     @if (Route::has('login'))
                       @if (Auth::check())

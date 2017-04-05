@@ -7,6 +7,24 @@
        <div id="loader">
        </div>
    </div>
+
+
+@if(isset($photos))
+  @foreach($photos as $n)
+
+  <div class="col-xs-12 col-sm-6">
+    $n->photo_name
+    <img src="imgPhoto/{{ $n->urlImg }}" style="max-width: 200px;">
+
+  </div>
+
+  @endforeach
+@endif
+
+
+
+
+
 <!--end preloader -->
 <!-- start about Section
 <section id="abt_sec">

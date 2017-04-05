@@ -4,9 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use app\direction;
-
-class directionController extends Controller
+class contactController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +13,7 @@ class directionController extends Controller
      */
     public function index()
     {
-        //
+        dd('index');
     }
 
     /**
@@ -47,7 +45,7 @@ class directionController extends Controller
      */
     public function show($id)
     {
-        //
+        dd('show id');
     }
 
     /**

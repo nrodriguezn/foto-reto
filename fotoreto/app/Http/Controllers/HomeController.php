@@ -23,6 +23,10 @@ class HomeController extends Controller
      */
     public function index()
     {
+        //retornar a home con las fotos que participan en el foto reto que ya estan autorizadas
+      //  $photos = photo::all(); //esto trae todas las fotos en la base de datos
         return view('home');
+        //return view('home')->with(['photo' => $photos]);
+
     }
 }

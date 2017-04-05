@@ -22,6 +22,7 @@ class CreatePhotosTable extends Migration
             $table->boolean('admin_acepted');
             $table->integer('photo_puntuation');
             $table->integer('visiting_sum');
+            $table->string('urlImg_photo');
             $table->timestamps();
         });
     }

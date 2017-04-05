@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use app\photo;
+
 class photoController extends Controller
 {
     /**
@@ -80,5 +82,17 @@ class photoController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function photochallenge_desktop_show()
+    {
+      //  $photos = photo::all();   //traigo todas las fotos de photo
+      //  return view('welcome')->with(['photo'-> $photos]);  //las envio a welcome
+      return view('welcome');
     }
 }

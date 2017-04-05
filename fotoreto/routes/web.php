@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'photoController@photochallenge_desktop_show');  //return view('welcome'); -> desde el controlador cargo las fotos
 
 Auth::routes();
 
@@ -26,3 +24,4 @@ Route::resource('/user', 'userController');
 Route::resource('/photo', 'photoController');
 Route::resource('/direction', 'directionController');
 Route::resource('/contract', 'contractController');
+Route::resource('/contact', 'contactController');

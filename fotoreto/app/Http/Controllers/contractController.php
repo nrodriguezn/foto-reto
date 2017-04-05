@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use app\contract;
+
 class contractController extends Controller
 {
     /**
