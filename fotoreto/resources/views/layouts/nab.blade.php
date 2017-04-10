@@ -24,6 +24,7 @@
         <link rel="stylesheet" href="css/structure/responsive.css">
         <link rel="stylesheet" href="css/structure/style.css">
 
+
     </head>
     <body >
             <!--[if lt IE 8]>
@@ -37,7 +38,7 @@
     		<div class="row">
     			<div class="col-lg-3 col-md-3 col-sm-12">
     				<div class="lft_hd">
-    					<a href="{{ url('/home') }}"><img src="{{ asset('images/fotoreto_logo.png') }}"  width=900 height=80/></a>
+    					<a href="{{ url('/') }}"><img src="{{ asset('images/fotoreto_logo.png') }}"  width=900 height=70/></a>
     				</div>
     			</div>
     			<div class="col-lg-9 col-md-9 col-sm-12">
@@ -71,7 +72,15 @@
     								<li><a  href="{{ url('/contract') }}">Contratar</a></li>
                     @if (Route::has('login'))
                       @if (Auth::check())
-                        <li>    <a href="{{ url('/user') }}">Perfil</a></li>
+                        <li><a href="#">{{ Auth::user()->name }} <i class="fa fa-angle-down"></i></a>
+                            <ul>
+                                <a href="{{ url('/user') }}">Perfil</a>
+                                <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
+                            </ul>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                {{ csrf_field() }}
+                            </form>
+                        </li>
                       @else
                         <li><a href="{{ url('/login') }}">Ingresar</a></li>
                         <li><a href="{{ url('/register') }}">Registrarse</a></li>
@@ -89,4 +98,5 @@
     	</div>
     </header>
     <br> <br> <br> <br> <br>
+  <script src="{{ asset('js/app.js') }}"></script>
     <!-- End Header Section -->

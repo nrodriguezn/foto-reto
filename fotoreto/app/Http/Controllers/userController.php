@@ -15,7 +15,8 @@ class userController extends Controller
      */
     public function index()
     {
-        dd('user controller index');
+
+        return view('controlpanel/admin/panel_admin');
     }
 
     /**

@@ -16,6 +16,7 @@ Route::get('/', 'photoController@photochallenge_desktop_show');  //return view('
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
+Route::get('/panel', 'userController@index');
 
 //Route::resource('/noticias', 'Noticias'); //adquiere los metodos del controlador y los convierte en rutas
 
