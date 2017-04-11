@@ -1,50 +1,44 @@
+
+
 @include('layouts/nab')
 
-
-<!-- start preloader -->
+<!-- start preloader-->
    <div id="loader-wrapper">
        <div class="logo"></div>
        <div id="loader">
        </div>
    </div>
+<!--end preloader -->
 
-
+<!-- Mostrando imagenes-->
 @if(isset($photos))
   @foreach($photos as $n)
-
-  <div class="col-xs-12 col-sm-6">
     $n->photo_name
     <img src="imgPhoto/{{ $n->urlImg }}" style="max-width: 200px;">
-
-  </div>
-
   @endforeach
 @endif
+<!-- fin mostrando imagenes-->
 
 
 
 
 
-<!--end preloader -->
-<!-- start about Section
+<!-- start about Section-->
 <section id="abt_sec">
 	<div class="container">
-		<div class="row">
-			<div class="col-lg-12 col-md-12 col-sm-12 col-xs12 ">
 				<div class="title_sec">
-					<h1>ABOUT</h1>
-					<h2>WE’RE BRANDING & DIGITAL STUDIO FROM VIET NAM</h2>
-				</div>
-			</div>
-			<div class="col-lg-12 col-md-12 col-sm-12 col-xs12 ">
+					<h1>En Construccion</h1>
+					<h2>Tareas por hacer</h2>
+        </div>
 				<div class="abt">
-					<p>Mauris luctus aliquet nunc quis consectetur. Curabitur elit massa, consequat vel velit sit amet, scelerisque hendrerit mi. Cras pellentesque sem turpis, quis interdum mi sagittis a. Donec mattis porttitor eleifend</p>
-				</div>
+					<p>Programar controlador Usuarios</p>
+          <p>Programar controlador FotoReto</p>
+          <p>Mostrar por pantalla estos datos</p>
 			</div>
-		</div>
 	</div>
 </section>
-End About Section -->
+
+<!--End About Section -->
 
 <!-- start Counting section
 <section id="counting_sec">
@@ -529,14 +523,14 @@ End pricing Section -->
 </section>
  End Happy Client  Section -->
 
-<!-- start contact us Section
+<!-- start contact us Section -->
 <section id="ctn_sec">
 	<div class="container">
 		<div class="row">
-			<div class="col-lg-12 col-md-12 col-sm-12 col-xs12 ">
+			<div class="col-md-12">
 				<div class="title_sec">
-					<h1>Contact Info</h1>
-					<h2>WE’RE BRANDING & DIGITAL STUDIO FROM VIET NAM</h2>
+					<h1>FotoReto</h1>
+					<h2>Contactanos para compartir tus mejoras</h2>
 				</div>
 			</div>
 			<div class="col-sm-6">
@@ -560,16 +554,16 @@ End pricing Section -->
 			<div class="col-lg-6 col-md-6 col-sm-6">
 				<div class="cnt_info">
 					<ul>
-						<li><i class="fa fa-facebook"></i><p>121 King Street, Melbourne Victoria 3000 Australia</p></li>
-						<li><i class="fa fa-envelope"></i><p>contact@info.com</p></li>
-						<li><i class="fa fa-phone"></i><p>+0987654321 (+012345678)</p></li>
+						<li></i><p>U Diego Portales</p></li>
+						<li></i><p>contact@fotoreto.com</p></li>
+						<li></i><p>+56 9 5108 6820</p></li>
 					</ul>
 				</div>
 			</div>
 		</div>
 	</div>
 </section>
-End contact us  Section -->
+<!--End contact us  Section -->
 
 
 @include('layouts.footer')
@@ -577,7 +571,7 @@ End contact us  Section -->
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
         <script src="js/structure/vendor/jquery-1.11.2.min.js"></script>
 
-<<script src="js/structure/isotope.pkgd.min.js"></script>
+<script src="js/structure/isotope.pkgd.min.js"></script>
 <script src="js/structure/bootstrap.min.js"></script>
 <script src="js/structure/jquery-ui.js"></script>
 <script src="js/structure/appear.js"></script>
@@ -590,25 +584,7 @@ End contact us  Section -->
 <script src="js/structure/scrolling-nav.js"></script>
 <script src="js/structure/plugins.js"></script>
 <!-- Google Map js -->
-        <script src="https://maps.googleapis.com/maps/api/js"></script>
-		<script>
-			function initialize() {
-			  var mapOptions = {
-				zoom: 14,
-				scrollwheel: false,
-				center: new google.maps.LatLng(41.092586000000000000, -75.592688599999970000)
-			  };
-			  var map = new google.maps.Map(document.getElementById('googleMap'),
-				  mapOptions);
-			  var marker = new google.maps.Marker({
-				position: map.getCenter(),
-				animation:google.maps.Animation.BOUNCE,
-				icon: 'img/map-marker.png',
-				map: map
-			  });
-			}
-			google.maps.event.addDomListener(window, 'load', initialize);
-		</script>
+
 <script src="js/structure/main.js"></script>
 
 <script src="showHide.js" type="text/javascript"></script>
@@ -616,8 +592,6 @@ End contact us  Section -->
 <script type="text/javascript">
 
 $(document).ready(function(){
-
-
    $('.show_hide').showHide({
 		speed: 1000,  // speed you want the toggle to happen
 		easing: '',  // the animation effect you want. Remove this line if you dont want an effect and if you haven't included jQuery UI

@@ -2,7 +2,7 @@
 @include('layouts.nab')
 
 <div class="row">
-  <div class="col-md-2">
+  <div class="col-md-2 nav_menu_izq">
     <!-- Start Collapsable menu -->
         <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
         <div class="panel panel-default">
@@ -15,11 +15,11 @@
           </div>
           <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
             <div class="panel-body" >
-              <ul >
-                <li ><button type="button"  name="button">Administrar</button></li>
-                <li ><button type="button"  name="button">Participación</button></li>
-                <li ><button type="button"  name="button">Datos Generales </button></li>
-              </ul>
+              <li>
+                <ul><button type="button"  name="button">Administrar</button></ul>
+                <ul><button type="button"  name="button">Participación</button></ul>
+                <ul><button type="button"  name="button">Datos Generales</button></ul>
+              </li>
             </div>
           </div>
         </div>
@@ -33,13 +33,13 @@
           </div>
           <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
             <div class="panel-body">
-              <ul>
-                <li><button type="button" name="button">Iniciar / Finalizar </button></li>
-                <li><button type="button" name="button"> Proceso </button></li>
-                <li><button type="button" name="button"> Filtrar </button></li>
-                <li><button type="button" name="button"> Resultados </button></li>
-                <li><button type="button" name="button"> Datos Generales </button></li>
-              </ul>
+              <li>
+                <ul><button type="button" name="button">Iniciar / Finalizar </button></ul>
+                <ul><button type="button" name="button"> Proceso </button></ul>
+                <ul><button type="button" name="button"> Filtrar </button></ul>
+                <ul><button type="button" name="button"> Resultados </button></ul>
+                <ul><button type="button" name="button"> Datos Generales </button></ul>
+              </li>
             </div>
           </div>
         </div>
@@ -53,12 +53,12 @@
           </div>
           <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
             <div class="panel-body">
-              <ul>
-                <li><button type="button" name="button">Banner </button></li>
-                <li><button type="button" name="button">Publicidad </button></li>
-                <li><button type="button" name="button">Tutoriales </button></li>
-                <li><button type="button" name="button">Productos</button></li>
-              </ul>
+              <li>
+                <ul><button type="button" name="button">Banner </button></ul>
+                <ul><button type="button" name="button">Publicidad </button></ul>
+                <ul><button type="button" name="button">Tutoriales </button></ul>
+                <ul><button type="button" name="button">Productos</button></ul>
+              </li>
             </div>
           </div>
         </div>
@@ -72,12 +72,12 @@
           </div>
           <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
             <div class="panel-body">
-              <ul>
-                <li><button type="button" name="button">Pendientes </button></li>
-                <li><button type="button" name="button">En Proceso </button></li>
-                <li><button type="button" name="button">Terminados </button></li>
-                <li><button type="button" name="button">Datos Generales </button></li>
-              </ul>
+              <li>
+                <ul><button type="button" name="button">Pendientes </button></ul>
+                <ul><button type="button" name="button">En Proceso </button></ul>
+                <ul><button type="button" name="button">Terminados </button></ul>
+                <ul><button type="button" name="button">Datos Generales </button></ul>
+              </li>
             </div>
           </div>
         </div>
@@ -88,8 +88,10 @@
   <!-- Start Date Submenu -->
 
   <div class="col-md-10">
-Informacion del menu que se apreta
+@include('controlpanel/admin/user/administrar')
   </div>
+
 
   <!-- Finish SubMenu -->
 </div>
+@include('layouts.footer')

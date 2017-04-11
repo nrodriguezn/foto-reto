@@ -8,7 +8,7 @@
 			<div class="col-lg-12">
 				<div class="ft">
 					<ul>
-						<li><a href=""><i class="fa fa-facebook">facebook</i></a></li>
+						<li><a href=""><i class="fa fa-facebook">Facebook</i></a></li>
 						<li><a href=""><i class="fa fa-twitter">Twitter</i></a></li>
 
 						<li><a href=""><i class="fa fa-flickr">Flickr</i></a></li>
