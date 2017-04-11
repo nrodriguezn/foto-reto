@@ -14,11 +14,11 @@
             </h4>
           </div>
           <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
-            <div class="panel-body">
-              <ul>
-                <li><button type="button" name="button">Administrar</button></li>
-                <li><button type="button" name="button">Participación</button></li>
-                <li><button type="button" name="button">Datos Generales </button></li>
+            <div class="panel-body" >
+              <ul >
+                <li ><button type="button"  name="button">Administrar</button></li>
+                <li ><button type="button"  name="button">Participación</button></li>
+                <li ><button type="button"  name="button">Datos Generales </button></li>
               </ul>
             </div>
           </div>
