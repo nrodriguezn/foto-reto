@@ -577,7 +577,7 @@ End contact us  Section -->
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
         <script src="js/structure/vendor/jquery-1.11.2.min.js"></script>
 
-<script src="js/structure/isotope.pkgd.min.js"></script>
+<<script src="js/structure/isotope.pkgd.min.js"></script>
 <script src="js/structure/bootstrap.min.js"></script>
 <script src="js/structure/jquery-ui.js"></script>
 <script src="js/structure/appear.js"></script>
