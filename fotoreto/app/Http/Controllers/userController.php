@@ -59,7 +59,9 @@ class userController extends Controller
      */
     public function edit($id)
     {
-        //
+      $usuario= User::find($id);
+  return view('home')->with(['edit' => true, 'user' => $usuario]);
+
     }
 
     /**
@@ -83,5 +85,10 @@ class userController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function mostrar(){
+      $usuario = User::all();
+      return view('')->with(['user' => $usuario]);
     }
 }
