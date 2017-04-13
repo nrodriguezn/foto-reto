@@ -28,6 +28,7 @@ Route::get('/home', 'HomeController@index');
 
 
 // RUTAS DE usuario
+Route::resource('/user', 'userController');
 Route::get('/panel', 'userController@index');
 Route::get('/show_user', 'userController@mostrar');
 

@@ -16,7 +16,7 @@ class userController extends Controller
     public function index()
     {
 
-        return view('controlpanel/admin/panel_admin');
+        return view('controlpanel/admin/first_view');
     }
 
     /**
@@ -118,6 +118,7 @@ class userController extends Controller
     {
         //
     }
+
     public function mostrar(){
       $usuario = User::all();
       return view('home')->with(['user' => $usuario]);

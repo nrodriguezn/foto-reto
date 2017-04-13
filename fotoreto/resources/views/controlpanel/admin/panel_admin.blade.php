@@ -88,7 +88,10 @@
   <!-- Start Date Submenu -->
 
   <div class="col-md-10">
-@include('controlpanel/admin/user/administrar')
+
+    @yield('content')
+
+
   </div>
 
 
