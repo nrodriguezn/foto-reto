@@ -86,10 +86,12 @@
   </div>
 
   <!-- Start Date Submenu -->
-
   <div class="col-md-10">
 
-    @yield('content')
+
+    @include('controlpanel/admin/user/mostrar_usuarios')
+
+
 
 
   </div>

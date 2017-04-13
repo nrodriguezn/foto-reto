@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use app\user;
+use app\User;
+
+use Storage;
 
 class userController extends Controller
 {
@@ -15,8 +17,8 @@ class userController extends Controller
      */
     public function index()
     {
-
-        return view('controlpanel/admin/first_view');
+        
+        return view('controlpanel/admin/panel_admin');
     }
 
     /**
@@ -121,6 +123,8 @@ class userController extends Controller
 
     public function mostrar(){
       $usuario = User::all();
-      return view('home')->with(['user' => $usuario]);
+      return view('controlpanel/admin/first_view')->with(['user' => $usuario]);
+
+
     }
 }
