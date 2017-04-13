@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use app\User;
+use App\User;
 
 use Storage;
 
@@ -17,7 +17,7 @@ class userController extends Controller
      */
     public function index()
     {
-        
+
         return view('controlpanel/admin/panel_admin');
     }
 
@@ -62,7 +62,7 @@ class userController extends Controller
     public function edit($id)
     {
       $usuario= User::find($id);
-  return view('home')->with(['edit' => true, 'user' => $usuario]);
+      return view('home')->with(['edit' => true, 'user' => $usuario]);
 
     }
 
@@ -122,8 +122,8 @@ class userController extends Controller
     }
 
     public function mostrar(){
-      $usuario = User::all();
-      return view('controlpanel/admin/first_view')->with(['user' => $usuario]);
+      $usuario = user::all();
+     return view('controlpanel/admin/panel_admin')->with(['user' => $usuario]);
 
 
     }

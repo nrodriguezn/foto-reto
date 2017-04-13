@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use app\photochallenge;
+use App\Photochallenge;
 
 class photochallengeController extends Controller
 {
@@ -25,7 +25,8 @@ class photochallengeController extends Controller
      */
     public function create()
     {
-        //
+
+
     }
 
     /**
@@ -36,7 +37,7 @@ class photochallengeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
     }
 
     /**
@@ -82,5 +83,10 @@ class photochallengeController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function iniciar_finalizar()
+    {
+        $fotoreto = photochallenge::all();
     }
 }

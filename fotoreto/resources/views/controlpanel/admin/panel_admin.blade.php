@@ -16,7 +16,7 @@
           <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
             <div class="panel-body" >
               <li>
-                <ul><button type="button"  name="button">Administrar</button></ul>
+                <ul><a href="{{ url('/show_user') }}">Administrar</a></ul>
                 <ul><button type="button"  name="button">Participación</button></ul>
                 <ul><button type="button"  name="button">Datos Generales</button></ul>
               </li>
@@ -34,7 +34,7 @@
           <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
             <div class="panel-body">
               <li>
-                <ul><button type="button" name="button">Iniciar / Finalizar </button></ul>
+                <ul><button type="button" name="button"><a href="{{ url('/fotoreto_iniciar_finalizar') }}">Iniciar / Finalizar</a> </button></ul>
                 <ul><button type="button" name="button"> Proceso </button></ul>
                 <ul><button type="button" name="button"> Filtrar </button></ul>
                 <ul><button type="button" name="button"> Resultados </button></ul>
@@ -88,9 +88,11 @@
   <!-- Start Date Submenu -->
   <div class="col-md-10">
 
-
-    @include('controlpanel/admin/user/mostrar_usuarios')
-
+    @if(isset($user))
+      @include('controlpanel/admin/user/mostrar_usuarios')
+    @else
+      @include('controlpanel/admin/first_view')
+    @endif
 
 
 

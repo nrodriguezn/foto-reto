@@ -35,6 +35,7 @@ Route::get('/show_user', 'userController@mostrar');
 
 //RUTAS DE photochallenge
 Route::resource('/photochallenge', 'photochallengeController');
+Route::get('/fotoreto_iniciar_finalizar', 'photochallengeController@iniciar_finalizar');
 
 //RUTAS DE photo
 Route::resource('/photo', 'photoController');
