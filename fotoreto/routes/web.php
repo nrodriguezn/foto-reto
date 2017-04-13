@@ -30,7 +30,7 @@ Route::get('/home', 'HomeController@index');
 // RUTAS DE usuario
 Route::resource('/user', 'userController'); //primera ruta de usuario ( se usa en nav bar)
 Route::get('/panel', 'userController@index');
-Route::get('/show_user', 'userController@mostrar');
+Route::get('/administrar', 'userController@administrar');
 
 
 //RUTAS DE photochallenge

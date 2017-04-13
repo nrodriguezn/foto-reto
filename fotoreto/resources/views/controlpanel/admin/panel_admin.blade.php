@@ -16,7 +16,7 @@
           <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
             <div class="panel-body" >
               <li>
-                <ul><a href="{{ url('/show_user') }}">Administrar</a></ul>
+                <ul><button type="button" name="button"><a href="{{ url('/administrar') }}">Administrar</a></button></ul>
                 <ul><button type="button"  name="button">Participación</button></ul>
                 <ul><button type="button"  name="button">Datos Generales</button></ul>
               </li>
@@ -90,6 +90,8 @@
 
     @if(isset($user))
       @include('controlpanel/admin/user/mostrar_usuarios')
+    @elseif(isset($iniciar_fotoreto))
+      @include('controlpanel/photochallenge/iniciar')
     @else
       @include('controlpanel/admin/first_view')
     @endif

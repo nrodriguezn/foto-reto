@@ -87,6 +87,10 @@ class photochallengeController extends Controller
 
     public function iniciar_finalizar()
     {
-        $fotoreto = photochallenge::all();
+        $fotoreto = new photochallenge;
+        $fotoreto->name = 'hola';
+        $fotoreto->apellido = 'chao';
+
+        return view('controlpanel/admin/panel_admin')->with(['iniciar_fotoreto' => $fotoreto]);
     }
 }

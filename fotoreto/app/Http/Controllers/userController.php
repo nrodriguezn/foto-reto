@@ -121,8 +121,8 @@ class userController extends Controller
         //
     }
 
-    public function mostrar(){
-      $usuario = user::all();
+    public function administrar(){
+      $usuario = User::all();
      return view('controlpanel/admin/panel_admin')->with(['user' => $usuario]);
 
 
