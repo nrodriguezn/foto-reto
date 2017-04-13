@@ -31,6 +31,8 @@ Route::get('/home', 'HomeController@index');
 Route::resource('/user', 'userController'); //primera ruta de usuario ( se usa en nav bar)
 Route::get('/panel', 'userController@index');
 Route::get('/administrar', 'userController@administrar');
+Route::get('/participacion', 'userController@participacion');
+Route::get('/datos_usuario', 'userController@datos_usuario');
 
 
 //RUTAS DE photochallenge

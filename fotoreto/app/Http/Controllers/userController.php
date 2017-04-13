@@ -124,7 +124,15 @@ class userController extends Controller
     public function administrar(){
       $usuario = User::all();
      return view('controlpanel/admin/panel_admin')->with(['user' => $usuario]);
-
-
     }
+
+    public function participacion(){
+      dd('participacion');
+    }
+
+    public function datos_usuario{
+      dd('datos usuario');
+    }
+
+
 }

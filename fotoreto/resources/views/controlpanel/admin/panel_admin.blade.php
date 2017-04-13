@@ -17,8 +17,8 @@
             <div class="panel-body" >
               <li>
                 <ul><button type="button" name="button"><a href="{{ url('/administrar') }}">Administrar</a></button></ul>
-                <ul><button type="button"  name="button">Participación</button></ul>
-                <ul><button type="button"  name="button">Datos Generales</button></ul>
+                <ul><button type="button"  name="button"><a href="{{ url('/participacion') }}">Participacion</a></button></ul>
+                <ul><button type="button"  name="button"><a href="{{ url('/datos_usuario') }}">Datos Generales</a></button></ul>
               </li>
             </div>
           </div>
@@ -95,8 +95,6 @@
     @else
       @include('controlpanel/admin/first_view')
     @endif
-
-
 
   </div>
 
