@@ -130,7 +130,7 @@ class userController extends Controller
       dd('participacion');
     }
 
-    public function datos_usuario{
+    public function datos_usuario(){
       dd('datos usuario');
     }
 
