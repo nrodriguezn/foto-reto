@@ -35,17 +35,11 @@
             <div class="panel-body">
               <li>
                 <ul><button type="button" name="button"><a href="{{ url('/fotoreto_iniciar_finalizar') }}">Iniciar / Finalizar</a> </button></ul>
-<<<<<<< HEAD
-                <ul><button type="button" name="button"> Proceso </button></ul>
-                <ul><button type="button" name="button"> Filtrar </button></ul>
-                <ul><button type="button" name="button"> Resultados </button></ul>
-                <ul><button type="button" name="button"> Datos Generales </button></ul>
-=======
+
                 <ul><button type="button" name="button"> <a href="{{ url('/proceso_fotoreto') }}">Proceso</a> </button></ul>
                 <ul><button type="button" name="button"> <a href="{{ url('/filtrar_fotoreto') }}">Filtrar</a> </button></ul>
                 <ul><button type="button" name="button"> <a href="{{ url('/resultados_fotoreto') }}">Resultados</a> </button></ul>
                 <ul><button type="button" name="button"> <a href="{{ url('/datos_fotoreto') }}">Datos Generales</a> </button></ul>
->>>>>>> feature/panel_control
               </li>
             </div>
           </div>
