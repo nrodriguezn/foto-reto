@@ -1,3 +1,5 @@
+@include('layouts.nab')
+
 @extends('layouts.app')
 
 @section('content')
@@ -66,3 +68,5 @@
     </div>
 </div>
 @endsection
+
+@include('layouts/footer')
