@@ -15,10 +15,9 @@
           </div>
           <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
             <div class="panel-body" >
-              <li>
-                <ul><button class="btn btn-default" type="button" name="button"><a href="{{ url('/administrar') }}">Administrar</a></button></ul>
-                <ul><button class="btn btn-default" type="button"  name="button"><a href="{{ url('/participacion') }}">Participacion</a></button></ul>
-                <ul><button class="btn btn-default" type="button"  name="button"><a href="{{ url('/datos_usuario') }}">Datos Generales</a></button></ul>
+                <div><button class="btn btn-default btn-block" type="button" name="button"><a href="{{ url('/administrar') }}" >Administrar</a></button></div>
+                <div><button class="btn btn-default btn-block" type="button"  name="button"><a href="{{ url('/participacion') }}">Participacion</a></button></div>
+                <div><button class="btn btn-default btn-block" type="button"  name="button"><a href="{{ url('/datos_usuario') }}">Datos Generales</a></button></div>
               </li>
             </div>
           </div>
@@ -33,14 +32,11 @@
           </div>
           <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
             <div class="panel-body">
-              <li>
-                <ul><button class="btn btn-default" type="button" name="button"><a href="{{ url('/fotoreto_iniciar_finalizar') }}">Iniciar / Finalizar</a> </button></ul>
-
-                <ul><button class="btn btn-default" type="button" name="button"> <a href="{{ url('/proceso_fotoreto') }}">Proceso</a> </button></ul>
-                <ul><button class="btn btn-default" type="button" name="button"> <a href="{{ url('/filtrar_fotoreto') }}">Filtrar</a> </button></ul>
-                <ul><button class="btn btn-default" type="button" name="button"> <a href="{{ url('/resultados_fotoreto') }}">Resultados</a> </button></ul>
-                <ul><button class="btn btn-default" type="button" name="button"> <a href="{{ url('/datos_fotoreto') }}">Datos Generales</a> </button></ul>
-              </li>
+                <div><button class="btn btn-default btn-block" type="button" name="button"><a href="{{ url('/fotoreto_iniciar_finalizar') }}">Iniciar / Finalizar</a> </button></div>
+                <div><button class="btn btn-default btn-block" type="button" name="button"> <a href="{{ url('/proceso_fotoreto') }}">Proceso</a> </button></div>
+                <div><button class="btn btn-default btn-block" type="button" name="button"> <a href="{{ url('/filtrar_fotoreto') }}">Filtrar</a> </button></div>
+                <div><button class="btn btn-default btn-block" type="button" name="button"> <a href="{{ url('/resultados_fotoreto') }}">Resultados</a> </button></div>
+                <div><button class="btn btn-default btn-block" type="button" name="button"> <a href="{{ url('/datos_fotoreto') }}">Datos Generales</a> </button></div>
             </div>
           </div>
         </div>
@@ -54,12 +50,10 @@
           </div>
           <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
             <div class="panel-body">
-              <li>
-                <ul><button class="btn btn-default" type="button" name="button">Banner </button></ul>
-                <ul><button class="btn btn-default" type="button" name="button">Publicidad </button></ul>
-                <ul><button class="btn btn-default" type="button" name="button">Tutoriales </button></ul>
-                <ul><button class="btn btn-default" type="button" name="button">Productos</button></ul>
-              </li>
+                <div><button class="btn btn-default btn-block" type="button" name="button">Banner </button></div>
+                <div><button class="btn btn-default btn-block" type="button" name="button">Publicidad </button></div>
+                <div><button class="btn btn-default btn-block" type="button" name="button">Tutoriales </button></div>
+                <div><button class="btn btn-default btn-block" type="button" name="button">Productos</button></div>
             </div>
           </div>
         </div>
@@ -73,12 +67,10 @@
           </div>
           <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
             <div class="panel-body">
-              <li>
-                <ul><button class="btn btn-default" type="button" name="button">Pendientes </button></ul>
-                <ul><button class="btn btn-default" type="button" name="button">En Proceso </button></ul>
-                <ul><button class="btn btn-default" type="button" name="button">Terminados </button></ul>
-                <ul><button class="btn btn-default" type="button" name="button">Datos Generales </button></ul>
-              </li>
+                <div><button class="btn btn-default btn-block" type="button" name="button">Pendientes </button></div>
+                <div><button class="btn btn-default btn-block" type="button" name="button">En Proceso </button></div>
+                <div><button class="btn btn-default btn-block" type="button" name="button">Terminados </button></div>
+                <div><button class="btn btn-default btn-block" type="button" name="button">Datos Generales </button></div>
             </div>
           </div>
         </div>
