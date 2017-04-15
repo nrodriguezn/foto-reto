@@ -39,6 +39,8 @@ Route::get('/datos_usuario', 'userController@datos_usuario');
 Route::resource('/photochallenge', 'photochallengeController');
 Route::get('/fotoreto_iniciar_finalizar', 'photochallengeController@iniciar_finalizar');
 
+
+
 //RUTAS DE photo
 Route::resource('/photo', 'photoController');
 Route::get('/', 'photoController@photochallenge_desktop_show');  //return view('welcome'); -> desde el controlador cargo las fotos
