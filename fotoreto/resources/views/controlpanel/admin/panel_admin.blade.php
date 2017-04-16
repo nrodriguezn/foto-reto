@@ -84,7 +84,7 @@
     @if(isset($user))
       @include('controlpanel/admin/user/mostrar_usuarios')
     @elseif(isset($iniciar_fotoreto))
-      @include('controlpanel/photochallenge/iniciar')
+      @include('controlpanel/admin/photochallenge/iniciar')
     @else
       @include('controlpanel/admin/first_view')
     @endif

@@ -15,10 +15,17 @@ class userController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
 
         return view('controlpanel/admin/panel_admin');
+      /*  if(auth::user() == 1)
+          return view('controlpanel/admin/panel_admin');
+        elseif(auth::user() == 2)
+          return view('controlpanel/user/panel_user');
+        elseif(auth::user() == 3)
+          return view('controlpanel/empleador/panel_empleador');
+        dd('error'); */
     }
 
     /**
