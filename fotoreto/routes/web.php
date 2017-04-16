@@ -37,7 +37,12 @@ Route::get('/datos_usuario', 'userController@datos_usuario');
 
 //RUTAS DE photochallenge
 Route::resource('/photochallenge', 'photochallengeController');
-Route::get('/fotoreto_iniciar_finalizar', 'photochallengeController@iniciar_finalizar');
+Route::get('/fotoreto_iniciar_finalizar', 'photochallengeController@fotoreto_iniciar_finalizar');
+Route::get('/fotoreto_proceso', 'photochallengeController@fotoreto_proceso');
+Route::get('/fotoreto_filtrar', 'photochallengeController@fotoreto_filtrar');
+Route::get('/fotoreto_resultados', 'photochallengeController@fotoreto_resultados');
+Route::get('/fotoreto_datos_generales', 'photochallengeController@fotoreto_datos_generales');
+
 
 
 
@@ -52,6 +57,11 @@ Route::resource('/direction', 'directionController');
 
 //RUTAS DE contract
 Route::resource('/contract', 'contractController');
+Route::get('/contract_pendientes', 'contractController@contract_pendientes');
+Route::get('/contract_in_process', 'contractController@contract_in_process');
+Route::get('/contract_terminados', 'contractController@contract_terminados');
+Route::get('/contract_datos_generales', 'contractController@contract_datos_generales');
+
 
 //RUTAS DE contact
 Route::resource('/contact', 'contactController');

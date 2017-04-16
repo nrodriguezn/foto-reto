@@ -133,12 +133,14 @@ class userController extends Controller
     }
 
     public function participacion(){
-      dd('participacion');
+      $participacion = new user;
+      return view('controlpanel/admin/panel_admin')->with(['participacion' => $participacion]);
     }
 
     public function datos_usuario(){
-      dd('datos usuario');
-    }
+      $datos_usuario = new user;
+      return view('controlpanel/admin/panel_admin')->with(['datos_usuario' => $datos_usuario]);
+   }
 
 
 }

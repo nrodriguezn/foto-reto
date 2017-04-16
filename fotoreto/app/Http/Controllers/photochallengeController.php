@@ -85,12 +85,35 @@ class photochallengeController extends Controller
         //
     }
 
-    public function iniciar_finalizar()
+    public function fotoreto_iniciar_finalizar()
     {
-        $fotoreto = new photochallenge;
-        $fotoreto->name = 'hola';
-        $fotoreto->apellido = 'chao';
-
-        return view('controlpanel/admin/panel_admin')->with(['iniciar_fotoreto' => $fotoreto]);
+        $fotoreto_iniciar = new photochallenge;
+        //metodo para iniciar fotoreto
+        return view('controlpanel/admin/panel_admin')->with(['fotoreto_iniciar' => $fotoreto_iniciar]);
     }
+
+    public function fotoreto_proceso(){
+      $fotoreto_iniciar = new photochallenge;
+      return view('controlpanel/admin/panel_admin')->with(['fotoreto_proceso' => $fotoreto_proceso]);
+    }
+
+    public function fotoreto_filtrar(){
+      $fotoreto_filtrar = new photochallenge;
+      return view('controlpanel/admin/panel_admin')->with(['fotoreto_filtrar' => $fotoreto_filtrar]);
+    }
+
+    public function fotoreto_resultados(){
+      $fotoreto_resultados = new photochallenge;
+      return view('controlpanel/admin/panel_admin')->with(['fotoreto_resultados' => $fotoreto_resultados]);
+    }
+    public function fotoreto_datos_generales(){
+      $fotoreto_datos_generales = new photochallenge;
+      return view('controlpanel/admin/panel_admin')->with(['fotoreto_datos_generales' => $fotoreto_datos_generales]);
+    }
+
+
+
+
+
+
 }
