@@ -13,7 +13,7 @@
               </a>
             </h4>
           </div>
-          <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+          <div id="collapseOne" class="panel-collapse collapse @isset($user) in  @endisset @isset($participacion) in  @endisset @isset($datos_usuario) in  @endisset  " role="tabpanel" aria-labelledby="headingOne">
             <div class="panel-body" >
                 <div><button class="btn btn-default btn-block" type="button" name="button"><a href="{{ url('/administrar') }}" >Administrar</a></button></div>
                 <div><button class="btn btn-default btn-block" type="button"  name="button"><a href="{{ url('/participacion') }}">Participacion</a></button></div>
@@ -30,13 +30,13 @@
               </a>
             </h4>
           </div>
-          <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+          <div id="collapseTwo" class="panel-collapse collapse @isset($fotoreto_iniciar) in  @endisset @isset($fotoreto_proceso) in  @endisset @isset($fotoreto_filtrar) in  @endisset @isset($fotoreto_resultados) in  @endisset @isset($fotoreto_datos_generales) in  @endisset" role="tabpanel" aria-labelledby="headingTwo">
             <div class="panel-body">
                 <div><button class="btn btn-default btn-block" type="button" name="button"><a href="{{ url('/fotoreto_iniciar_finalizar') }}">Iniciar / Finalizar</a> </button></div>
-                <div><button class="btn btn-default btn-block" type="button" name="button"> <a href="{{ url('/fotoreto_proceso') }}">Proceso</a> </button></div>
-                <div><button class="btn btn-default btn-block" type="button" name="button"> <a href="{{ url('/fotoreto_filtrar') }}">Filtrar</a> </button></div>
-                <div><button class="btn btn-default btn-block" type="button" name="button"> <a href="{{ url('/fotoreto_resultados') }}">Resultados</a> </button></div>
-                <div><button class="btn btn-default btn-block" type="button" name="button"> <a href="{{ url('/fotoreto_datos_generales') }}">Datos Generales</a> </button></div>
+                <div><button class="btn btn-default btn-block" type="button" name="button"><a href="{{ url('/fotoreto_proceso') }}">Proceso</a> </button></div>
+                <div><button class="btn btn-default btn-block" type="button" name="button"><a href="{{ url('/fotoreto_filtrar') }}">Filtrar</a> </button></div>
+                <div><button class="btn btn-default btn-block" type="button" name="button"><a href="{{ url('/fotoreto_resultados') }}">Resultados</a> </button></div>
+                <div><button class="btn btn-default btn-block" type="button" name="button"><a href="{{ url('/fotoreto_datos_generales') }}">Datos Generales</a> </button></div>
             </div>
           </div>
         </div>
@@ -65,7 +65,7 @@
               </a>
             </h4>
           </div>
-          <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+          <div id="collapseFour" class="panel-collapse collapse @isset($contract_pendientes) in  @endisset @isset($contract_in_process) in  @endisset @isset($contract_terminados) in  @endisset @isset($contract_datos_generales) in  @endisset " role="tabpanel" aria-labelledby="headingFour">
             <div class="panel-body">
                 <div><button class="btn btn-default btn-block" type="button" name="button"><a href="{{ url('/contract_pendientes') }}">Pendientes</a></button></div>
                 <div><button class="btn btn-default btn-block" type="button" name="button"><a href="{{ url('/contract_in_process') }}">En Proceso</a></button></div>
@@ -106,7 +106,14 @@
 
 
 <!-- ADMIN CONTRATO -->
-
+    @elseif(isset($contract_pendientes))
+      @include('controlpanel/admin/contract/contract_pendientes')
+    @elseif(isset($contract_in_process))
+      @include('controlpanel/admin/contract/contract_in_process')
+    @elseif(isset($contract_terminados))
+      @include('controlpanel/admin/contract/contract_terminados')
+    @elseif(isset($contract_datos_generales))
+      @include('controlpanel/admin/contract/contract_datos_generales')
 
 <!--FIRST VIEW-->
     @else

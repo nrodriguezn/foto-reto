@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use app\contract;
+use App\Contract;
 
 class contractController extends Controller
 {
@@ -84,19 +84,23 @@ class contractController extends Controller
         //
     }
     public function contract_pendientes(){
-      dd('contract_pendientes');
+      $contract_pendientes = new contract;
+      return view('controlpanel/admin/panel_admin')->with(['contract_pendientes'=> $contract_pendientes]);
     }
 
     public function contract_in_process(){
-      dd('contract_in_process');
+      $contract_in_process = new contract;
+      return view('controlpanel/admin/panel_admin')->with(['contract_in_process'=> $contract_in_process]);
     }
 
     public function contract_terminados(){
-      dd('contract_terminados');
+      $contract_terminados = new contract;
+      return view('controlpanel/admin/panel_admin')->with(['contract_terminados'=> $contract_terminados]);
     }
 
     public function contract_datos_generales(){
-      dd('contract_datos_generales');
+      $contract_datos_generales = new contract;
+      return view('controlpanel/admin/panel_admin')->with(['contract_datos_generales'=> $contract_datos_generales]);
 
     }
 }

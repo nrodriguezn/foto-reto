@@ -93,7 +93,7 @@ class photochallengeController extends Controller
     }
 
     public function fotoreto_proceso(){
-      $fotoreto_iniciar = new photochallenge;
+      $fotoreto_proceso = new photochallenge;
       return view('controlpanel/admin/panel_admin')->with(['fotoreto_proceso' => $fotoreto_proceso]);
     }
 
