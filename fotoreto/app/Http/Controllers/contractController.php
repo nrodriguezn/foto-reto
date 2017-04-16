@@ -83,4 +83,20 @@ class contractController extends Controller
     {
         //
     }
+    public function contract_pendientes(){
+      dd('contract_pendientes');
+    }
+
+    public function contract_in_process(){
+      dd('contract_in_process');
+    }
+
+    public function contract_terminados(){
+      dd('contract_terminados');
+    }
+
+    public function contract_datos_generales(){
+      dd('contract_datos_generales');
+
+    }
 }

@@ -112,8 +112,4 @@ class photochallengeController extends Controller
     }
 
 
-
-
-
-
 }

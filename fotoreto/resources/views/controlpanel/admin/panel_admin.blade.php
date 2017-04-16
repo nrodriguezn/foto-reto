@@ -81,17 +81,41 @@
   <!-- Start Date Submenu -->
   <div class="col-md-10">
 
+<!-- ADMIN USUARIO -->
     @if(isset($user))
       @include('controlpanel/admin/user/mostrar_usuarios')
+    @elseif(isset($participacion))
+      @include('controlpanel/admin/user/participacion')
+    @elseif(isset($datos_usuario))
+      @include('controlpanel/admin/user/datos_usuario')
+
+
+<!-- ADMIN FOTORETO -->
     @elseif(isset($fotoreto_iniciar))
       @include('controlpanel/admin/photochallenge/iniciar')
+    @elseif(isset($fotoreto_proceso))
+      @include('controlpanel/admin/photochallenge/proceso')
+    @elseif(isset($fotoreto_filtrar))
+      @include('controlpanel/admin/photochallenge/filtrar')
+    @elseif(isset($fotoreto_resultados))
+      @include('controlpanel/admin/photochallenge/resultados')
+    @elseif(isset($fotoreto_resultados))
+      @include('controlpanel/admin/photochallenge/resultados')
+    @elseif(isset($fotoreto_datos_generales))
+      @include('controlpanel/admin/photochallenge/datos_generales')
+
+
+<!-- ADMIN CONTRATO -->
+
+
+<!--FIRST VIEW-->
     @else
       @include('controlpanel/admin/first_view')
     @endif
 
+
   </div>
+<!-- Finish SubMenu -->
 
-
-  <!-- Finish SubMenu -->
 </div>
 @include('layouts.footer')
