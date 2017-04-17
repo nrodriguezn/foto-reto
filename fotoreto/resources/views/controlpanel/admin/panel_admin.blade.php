@@ -33,8 +33,8 @@
           <div id="collapseTwo" class="panel-collapse collapse @isset($fotoreto_iniciar) in  @endisset @isset($fotoreto_proceso) in  @endisset @isset($fotoreto_filtrar) in  @endisset @isset($fotoreto_resultados) in  @endisset @isset($fotoreto_datos_generales) in  @endisset" role="tabpanel" aria-labelledby="headingTwo">
             <div class="panel-body">
                 <div><button class="btn btn-default btn-block" type="button" name="button"><a href="{{ url('/fotoreto_iniciar_finalizar') }}">Iniciar / Finalizar</a> </button></div>
-                <div><button class="btn btn-default btn-block" type="button" name="button"><a href="{{ url('/fotoreto_proceso') }}">Proceso</a> </button></div>
                 <div><button class="btn btn-default btn-block" type="button" name="button"><a href="{{ url('/fotoreto_filtrar') }}">Filtrar</a> </button></div>
+                <div><button class="btn btn-default btn-block" type="button" name="button"><a href="{{ url('/fotoreto_proceso') }}">Proceso</a> </button></div>
                 <div><button class="btn btn-default btn-block" type="button" name="button"><a href="{{ url('/fotoreto_resultados') }}">Resultados</a> </button></div>
                 <div><button class="btn btn-default btn-block" type="button" name="button"><a href="{{ url('/fotoreto_datos_generales') }}">Datos Generales</a> </button></div>
             </div>
