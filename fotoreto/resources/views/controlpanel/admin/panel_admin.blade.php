@@ -13,12 +13,11 @@
               </a>
             </h4>
           </div>
-          <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+          <div id="collapseOne" class="panel-collapse collapse @isset($user) in  @endisset @isset($participacion) in  @endisset @isset($datos_usuario) in  @endisset  " role="tabpanel" aria-labelledby="headingOne">
             <div class="panel-body" >
-              <li>
-                <ul><button type="button" name="button"><a href="{{ url('/administrar') }}">Administrar</a></button></ul>
-                <ul><button type="button"  name="button">Participación</button></ul>
-                <ul><button type="button"  name="button">Datos Generales</button></ul>
+                <div><button class="btn btn-default btn-block" type="button" name="button"><a href="{{ url('/administrar') }}" >Administrar</a></button></div>
+                <div><button class="btn btn-default btn-block" type="button"  name="button"><a href="{{ url('/participacion') }}">Participacion</a></button></div>
+                <div><button class="btn btn-default btn-block" type="button"  name="button"><a href="{{ url('/datos_usuario') }}">Datos Generales</a></button></div>
               </li>
             </div>
           </div>
@@ -31,15 +30,13 @@
               </a>
             </h4>
           </div>
-          <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+          <div id="collapseTwo" class="panel-collapse collapse @isset($fotoreto_iniciar) in  @endisset @isset($fotoreto_proceso) in  @endisset @isset($fotoreto_filtrar) in  @endisset @isset($fotoreto_resultados) in  @endisset @isset($fotoreto_datos_generales) in  @endisset" role="tabpanel" aria-labelledby="headingTwo">
             <div class="panel-body">
-              <li>
-                <ul><button type="button" name="button"><a href="{{ url('/fotoreto_iniciar_finalizar') }}">Iniciar / Finalizar</a> </button></ul>
-                <ul><button type="button" name="button"> Proceso </button></ul>
-                <ul><button type="button" name="button"> Filtrar </button></ul>
-                <ul><button type="button" name="button"> Resultados </button></ul>
-                <ul><button type="button" name="button"> Datos Generales </button></ul>
-              </li>
+                <div><button class="btn btn-default btn-block" type="button" name="button"><a href="{{ url('/fotoreto_iniciar_finalizar') }}">Iniciar / Finalizar</a> </button></div>
+                <div><button class="btn btn-default btn-block" type="button" name="button"><a href="{{ url('/fotoreto_filtrar') }}">Filtrar</a> </button></div>
+                <div><button class="btn btn-default btn-block" type="button" name="button"><a href="{{ url('/fotoreto_proceso') }}">Proceso</a> </button></div>
+                <div><button class="btn btn-default btn-block" type="button" name="button"><a href="{{ url('/fotoreto_resultados') }}">Resultados</a> </button></div>
+                <div><button class="btn btn-default btn-block" type="button" name="button"><a href="{{ url('/fotoreto_datos_generales') }}">Datos Generales</a> </button></div>
             </div>
           </div>
         </div>
@@ -53,12 +50,10 @@
           </div>
           <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
             <div class="panel-body">
-              <li>
-                <ul><button type="button" name="button">Banner </button></ul>
-                <ul><button type="button" name="button">Publicidad </button></ul>
-                <ul><button type="button" name="button">Tutoriales </button></ul>
-                <ul><button type="button" name="button">Productos</button></ul>
-              </li>
+                <div><button class="btn btn-default btn-block" type="button" name="button"><a href="{{ url('/contenido_banner') }}">Banner</a></button></div>
+                <div><button class="btn btn-default btn-block" type="button" name="button"><a href="{{ url('/contenido_publicidad') }}">Publicidad</a> </button></div>
+                <div><button class="btn btn-default btn-block" type="button" name="button"><a href="{{ url('/contenido_tutoriales') }}">Tutoriales</a> </button></div>
+                <div><button class="btn btn-default btn-block" type="button" name="button"><a href="{{ url('/contenido_productos') }}">Productos</a></button></div>
             </div>
           </div>
         </div>
@@ -70,14 +65,12 @@
               </a>
             </h4>
           </div>
-          <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+          <div id="collapseFour" class="panel-collapse collapse @isset($contract_pendientes) in  @endisset @isset($contract_in_process) in  @endisset @isset($contract_terminados) in  @endisset @isset($contract_datos_generales) in  @endisset " role="tabpanel" aria-labelledby="headingFour">
             <div class="panel-body">
-              <li>
-                <ul><button type="button" name="button">Pendientes </button></ul>
-                <ul><button type="button" name="button">En Proceso </button></ul>
-                <ul><button type="button" name="button">Terminados </button></ul>
-                <ul><button type="button" name="button">Datos Generales </button></ul>
-              </li>
+                <div><button class="btn btn-default btn-block" type="button" name="button"><a href="{{ url('/contract_pendientes') }}">Pendientes</a></button></div>
+                <div><button class="btn btn-default btn-block" type="button" name="button"><a href="{{ url('/contract_in_process') }}">En Proceso</a></button></div>
+                <div><button class="btn btn-default btn-block" type="button" name="button"><a href="{{ url('/contract_terminados') }}">Terminados</a></button></div>
+                <div><button class="btn btn-default btn-block" type="button" name="button"><a href="{{ url('/contract_datos_generales') }}">Datos Generales</a> </button></div>
             </div>
           </div>
         </div>
@@ -88,19 +81,48 @@
   <!-- Start Date Submenu -->
   <div class="col-md-10">
 
+<!-- ADMIN USUARIO -->
     @if(isset($user))
       @include('controlpanel/admin/user/mostrar_usuarios')
-    @elseif(isset($iniciar_fotoreto))
-      @include('controlpanel/photochallenge/iniciar')
+    @elseif(isset($participacion))
+      @include('controlpanel/admin/user/participacion')
+    @elseif(isset($datos_usuario))
+      @include('controlpanel/admin/user/datos_usuario')
+
+
+<!-- ADMIN FOTORETO -->
+    @elseif(isset($fotoreto_iniciar))
+      @include('controlpanel/admin/photochallenge/iniciar')
+    @elseif(isset($fotoreto_proceso))
+      @include('controlpanel/admin/photochallenge/proceso')
+    @elseif(isset($fotoreto_filtrar))
+      @include('controlpanel/admin/photochallenge/filtrar')
+    @elseif(isset($fotoreto_resultados))
+      @include('controlpanel/admin/photochallenge/resultados')
+    @elseif(isset($fotoreto_resultados))
+      @include('controlpanel/admin/photochallenge/resultados')
+    @elseif(isset($fotoreto_datos_generales))
+      @include('controlpanel/admin/photochallenge/datos_generales')
+
+
+<!-- ADMIN CONTRATO -->
+    @elseif(isset($contract_pendientes))
+      @include('controlpanel/admin/contract/contract_pendientes')
+    @elseif(isset($contract_in_process))
+      @include('controlpanel/admin/contract/contract_in_process')
+    @elseif(isset($contract_terminados))
+      @include('controlpanel/admin/contract/contract_terminados')
+    @elseif(isset($contract_datos_generales))
+      @include('controlpanel/admin/contract/contract_datos_generales')
+
+<!--FIRST VIEW-->
     @else
       @include('controlpanel/admin/first_view')
     @endif
 
 
-
   </div>
+<!-- Finish SubMenu -->
 
-
-  <!-- Finish SubMenu -->
 </div>
 @include('layouts.footer')
