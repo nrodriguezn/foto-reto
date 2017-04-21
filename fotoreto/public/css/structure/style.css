@@ -22,7 +22,7 @@ text-align : center;
 /*FIN UTILIZADO EN LA PRIMERA PAGINA */
 /* Inicio Relativo al NavBar */
 .main_menu_sec {
-background : none 0 0 repeat scroll #353638;
+background : none 0 0 repeat scroll #372537;
 border : none 0;
 margin : 0;
 }
@@ -68,7 +68,7 @@ transition : all 0.8s 0s ease;
 color: gray;
 }
 #nav_menu ul ul {				/* colapsa el menu */
-background : none 0 0 repeat scroll #363638;
+background : none 0 0 repeat scroll #372537;
 display : none;
 left : 0;
 padding : 0;
@@ -161,6 +161,10 @@ margin-left : 15px;
 }
 /* FIn LOader */
 /* Estilo Footer */
+#footer_a {
+background : none 0 0 repeat scroll #372537;
+text-align : center;
+}
 #ft_sec {
 padding : 70px 0;
 }
@@ -810,10 +814,7 @@ margin-bottom : 93px;
 background : none 0 0 repeat scroll #363636;
 text-align : center;
 }
-#footer_a {
-background : none 0 0 repeat scroll #363636;
-text-align : center;
-}
+
 .map > h1 {
 color : #fff;
 font-size : 20px;

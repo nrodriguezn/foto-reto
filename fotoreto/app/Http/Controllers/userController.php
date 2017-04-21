@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Auth;
+
 use Illuminate\Http\Request;
 
 use App\User;
@@ -15,17 +17,21 @@ class userController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
+    public function index()
     {
 
+      if(Auth::user()->id_user_type == 1){
         return view('controlpanel/admin/panel_admin');
-      /*  if(auth::user() == 1)
-          return view('controlpanel/admin/panel_admin');
-        elseif(auth::user() == 2)
-          return view('controlpanel/user/panel_user');
-        elseif(auth::user() == 3)
-          return view('controlpanel/empleador/panel_empleador');
-        dd('error'); */
+      }
+      elseif(Auth::user()->id_user_type == 2){
+        return view('controlpanel/user/panel_user');
+      }
+      elseif(Auth::user()->id_user_type == 3){
+        return view('controlpanel/empleador/panel_empleador');
+      }
+      else{
+        return view('welcome');
+      }
     }
 
     /**
