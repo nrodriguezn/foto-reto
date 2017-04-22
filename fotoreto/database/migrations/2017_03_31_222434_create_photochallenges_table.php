@@ -18,6 +18,7 @@ class CreatePhotochallengesTable extends Migration
             $table->string('name');
             $table->string('description');
             $table->string('url_video');
+            $table->boolean('status');
             $table->date('end_date');
             $table->timestamps();
         });

@@ -42,7 +42,10 @@ return [
     */
 
     'disks' => [
-
+        'imgPhotoChallenge' => [
+                'driver' => 'local',
+               'root' => public_path('imgPhotoChallenge'),
+            ],
         'local' => [
             'driver' => 'local',
             'root' => storage_path('app'),

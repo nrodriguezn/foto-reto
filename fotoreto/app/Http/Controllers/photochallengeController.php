@@ -6,6 +6,10 @@ use Illuminate\Http\Request;
 
 use App\Photochallenge;
 
+Use Storage;
+
+use Illuminate\Support\Facades\DB;
+
 class photochallengeController extends Controller
 {
     /**
@@ -25,7 +29,7 @@ class photochallengeController extends Controller
      */
     public function create()
     {
-
+      dd('hola');
 
     }
 
@@ -37,8 +41,32 @@ class photochallengeController extends Controller
      */
     public function store(Request $request)
     {
+            $this->validate($request, [
+              'name' => 'required',
+              'description' => 'required',
+              'end_date' => 'required',
+              'url_video' => 'required'
+            ]);
 
-    }
+            $photochallenge = new photoChallenge();
+
+            $photochallenge -> name = $request->name;
+            $photochallenge -> description = $request->description;
+            $photochallenge -> end_date = $request->end_date;
+            $photochallenge -> url_video = $request->url_video;
+            $photochallenge -> status = 1;
+
+            if($photochallenge->save()){
+            return redirect('fotoreto_iniciar_finalizar');
+            }
+            else {
+            return back()->with('msj', 'Error');
+            }
+
+            return back();
+
+        }
+
 
     /**
      * Display the specified resource.
@@ -71,7 +99,26 @@ class photochallengeController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request,[
+          'name' => 'required',
+          'description' => 'required',
+          'url_video' => 'required',
+          'end_date' => 'required'
+          ]);
+
+          $photochallenge = Photochallenge::find($id);
+          $photochallenge -> name = $request -> name;
+          $photochallenge -> description = $request -> description;
+          $photochallenge -> url_video = $request -> url_video;
+
+          if($photochallenge->save()){
+            return back()->with('msj', 'Datos Actualizados');
+          }
+          else{
+            return back()-> with('errormsj', 'Error');
+          }
+          return back();
+
     }
 
     /**
@@ -87,9 +134,19 @@ class photochallengeController extends Controller
 
     public function fotoreto_iniciar_finalizar()
     {
-        $fotoreto_iniciar = new photochallenge;
-        //metodo para iniciar fotoreto
-        return view('controlpanel/admin/panel_admin')->with(['fotoreto_iniciar' => $fotoreto_iniciar]);
+        $fotoreto_iniciar =  photochallenge::all();
+        if($fotoreto_activo = DB::select('select * from photochallenges where status = 1'))
+          return view('controlpanel/admin/panel_admin')
+            ->with(['fotoreto_activo' => $fotoreto_activo])
+            ->with(['fotoreto_iniciar' => $fotoreto_iniciar]);
+        else
+          return view('controlpanel/admin/panel_admin')
+            ->with(['fotoreto_iniciar' => $fotoreto_iniciar]);
+    }
+
+    public function fotoreto_crear(){
+      $fotoreto_crear = new photochallenge;
+      return view('controlpanel/admin/panel_admin')->with(['fotoreto_crear' => $fotoreto_crear]);
     }
 
     public function fotoreto_proceso(){

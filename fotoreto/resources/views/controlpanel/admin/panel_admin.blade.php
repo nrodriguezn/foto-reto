@@ -30,7 +30,7 @@
               </a>
             </h4>
           </div>
-          <div id="collapseTwo" class="panel-collapse collapse @isset($fotoreto_iniciar) in  @endisset @isset($fotoreto_proceso) in  @endisset @isset($fotoreto_filtrar) in  @endisset @isset($fotoreto_resultados) in  @endisset @isset($fotoreto_datos_generales) in  @endisset" role="tabpanel" aria-labelledby="headingTwo">
+          <div id="collapseTwo" class="panel-collapse collapse @isset($fotoreto_iniciar) in  @endisset @isset($fotoreto_proceso) in  @endisset @isset($fotoreto_filtrar) in  @endisset @isset($fotoreto_resultados) in  @endisset @isset($fotoreto_datos_generales) in  @endisset @isset($fotoreto_crear) in @endisset" role="tabpanel" aria-labelledby="headingTwo">
             <div class="panel-body">
                 <div><button class="btn btn-default btn-block" type="button" name="button"><a href="{{ url('/fotoreto_iniciar_finalizar') }}">Iniciar / Finalizar</a> </button></div>
                 <div><button class="btn btn-default btn-block" type="button" name="button"><a href="{{ url('/fotoreto_filtrar') }}">Filtrar</a> </button></div>
@@ -103,6 +103,8 @@
       @include('controlpanel/admin/photochallenge/resultados')
     @elseif(isset($fotoreto_datos_generales))
       @include('controlpanel/admin/photochallenge/datos_generales')
+    @elseif(isset($fotoreto_crear))
+      @include('controlpanel/admin/photochallenge/crear')
 
 
 <!-- ADMIN CONTRATO -->

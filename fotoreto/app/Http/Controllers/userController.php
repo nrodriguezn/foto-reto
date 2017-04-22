@@ -103,7 +103,7 @@ class userController extends Controller
           $user -> id_direction = $request->id_direction;
           $user -> user_puntuation = $request->user_puntuation;
           $user -> phone = $request->phone;
-          $user -> id_user_type = $request->id_user_type;     //tengo que recuperar los tipos de usuario que se encuentran en la tabla
+          $user -> id_user_type = $request->id_user_type;
         //  user->save();
 
         /*  $img = $request -> file('urlImg');
