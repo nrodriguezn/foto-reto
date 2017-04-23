@@ -37,12 +37,13 @@ Route::get('/datos_usuario', 'userController@datos_usuario');
 
 //RUTAS DE photochallenge
 Route::resource('/photochallenge', 'photochallengeController');
-Route::get('/fotoreto_iniciar_finalizar', 'photochallengeController@fotoreto_iniciar_finalizar');
+Route::get('/fotoreto_iniciar_finalizar', 'photochallengeController@fotoreto_iniciar_finalizar');  //cambiar a finalizar mas adelante
 Route::get('/fotoreto_crear', 'photochallengeController@fotoreto_crear');
 Route::get('/fotoreto_proceso', 'photochallengeController@fotoreto_proceso');
 Route::get('/fotoreto_filtrar', 'photochallengeController@fotoreto_filtrar');
 Route::get('/fotoreto_resultados', 'photochallengeController@fotoreto_resultados');
 Route::get('/fotoreto_datos_generales', 'photochallengeController@fotoreto_datos_generales');
+Route::get('/fotoreto_finalizar/{id}', 'photochallengeController@fotoreto_finalizar');
 
 
 

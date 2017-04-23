@@ -113,10 +113,10 @@ class userController extends Controller
           $noticia->urlImg=$file_route;  */
 
         if($user->save()){
-          return redirect('administrar');
+          return back()->with('msj', 'Datos Actualizados');
         }
         else {
-          return back()->with('msj', 'Error');
+          return back()->with('errormsj', 'Error');
         }
 
         return back();

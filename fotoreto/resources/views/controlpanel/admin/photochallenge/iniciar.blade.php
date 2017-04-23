@@ -39,47 +39,62 @@
   <h2> Fotoretos Activos </h2>
 
 @if(isset($fotoreto_activo))
-
-@foreach($fotoreto_activo as $fa)
+  @foreach($fotoreto_activo as $fa)
     <form class="form-horizontal" role="form" action="{{ route('photochallenge.update', $fa->id) }}" method="POST" enctype="multipart/form-data" >
-        <input name="_method" type="hidden" value="PUT">
-        {{ csrf_field() }}
-    <div class="form-group">
-      <label for="exampleInputEmail1">Nombre de Fotoreto</label>
-      <input type="text" class="form-control" name="name" value="{{ $fa->name }}">
-    </div>
-    <div class="form-group">
-      <label >Descripción de Fotoreto</label>
-      <input class="form-control" name="description" rows="3" value="{{ $fa->description }}"></textarea>
-    </div>
-    <div class="form-group">
-      <label for="exampleInputEmail1">Fecha Finalización </label>
-      <input type="datetime-local" class="form-control" name="end_date" value="{{ $fa->end_date }}">
+          <input name="_method" type="hidden" value="PUT">
+              {{ csrf_field() }}
+          <div class="form-group">
+            <label for="exampleInputEmail1">Nombre de Fotoreto</label>
+            <input type="text" class="form-control" name="name" value="{{ $fa->name }}">
+          </div>
+          <div class="form-group">
+            <label >Descripción de Fotoreto</label>
+            <input class="form-control" name="description" rows="3" value="{{ $fa->description }}"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Fecha Finalización </label>
+            <input type="datetime-local" class="form-control" name="end_date" value="{{ $fa->end_date }}">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Url Video</label>
+            <input type="url" class="form-control" name="url_video" value="{{ $fa->url_video }}">
+          </div>
+        <div class="col-md-4"> <button type="submit" class="btn btn-success">Actualizar</button></div>
+        <div class="col-md-4"> Count Down</div>
+     </form>
 
-    </div>
-    <div class="form-group">
-      <label for="exampleInputEmail1">Url Video</label>
-      <input type="url" class="form-control" name="url_video" value="{{ $fa->url_video }}">
-    </div>
+<!-- BOTON FUNCIONANDO MAL -->
 
-    <button type="submit" class="btn btn-success">Actualizar</button>
-    </form>
+     <form role="form" action="{{ url('photochallenge_finalizar') }}" method="POST" enctype="multipart/form-data">
+       <input name="_method" type="hidden" value="PUT">
+           {{ csrf_field() }}
+          <input type="hidden" name="id" value="{{ $fa->id }}">
+        <div class="col-md-4"> <button type="submit" class="btn btn-danger"> Finalizar </button> </div>
+      </form>
+
+  <!--- FIN BOTON --->
+  
+    <br><br>
     @if(session()->has('msj'))
       <div class="alert alert-success" role="alert">{{ session('msj') }}</div>
     @endif
     @if(session()->has('errormsj'))
       <div class="alert alert-danger" role="alert">Error al guardar los datos</div>
     @endif
-
+    <br>
+  @endforeach
 <br>
-@endforeach
-
-<br>
-
 @else
-  <p>No hay FotoRetos Activos por el momento</p>
-  <a href="{{ url('/fotoreto_crear') }}"><button type="button" name="button" class="btn btn-success btn-lg"> Iniciar Fotoreto</button></a>
-@endif
+
+    @if(session()->has('msjfinalizado'))
+      <div class="alert alert-success" role="alert">{{ session('msjfinalizado') }}</div>
+    @endif
+    @if(session()->has('errormsjfinalizado'))
+      <div class="alert alert-danger" role="alert">{{ session('errormsjfinalizado')}}</div>
+    @endif
+      <p>No hay FotoRetos Activos por el momento</p>
+      <a href="{{ url('/fotoreto_crear') }}"><button type="button" name="button" class="btn btn-success btn-lg"> Iniciar Fotoreto</button></a>
+    @endif
 <div class="col-md-1">
 
 </div>

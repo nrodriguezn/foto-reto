@@ -19,7 +19,7 @@ class photochallengeController extends Controller
      */
     public function index()
     {
-        //
+        dd('inicio, first view');
     }
 
     /**
@@ -29,7 +29,7 @@ class photochallengeController extends Controller
      */
     public function create()
     {
-      dd('hola');
+      dd('create');
 
     }
 
@@ -87,7 +87,7 @@ class photochallengeController extends Controller
      */
     public function edit($id)
     {
-        //
+
     }
 
     /**
@@ -109,6 +109,7 @@ class photochallengeController extends Controller
           $photochallenge = Photochallenge::find($id);
           $photochallenge -> name = $request -> name;
           $photochallenge -> description = $request -> description;
+          $photochallenge -> end_date = $request -> end_date;
           $photochallenge -> url_video = $request -> url_video;
 
           if($photochallenge->save()){
@@ -142,6 +143,20 @@ class photochallengeController extends Controller
         else
           return view('controlpanel/admin/panel_admin')
             ->with(['fotoreto_iniciar' => $fotoreto_iniciar]);
+    }
+
+    public function fotoreto_finalizar($id){
+      dd($id);
+      $photochallenge = Photochallenge::find($id);
+      $photochallenge -> status = 0;
+
+      if($photochallenge->save()){
+        return back()->with('msjfinalizado', 'Fotoreto Finalizado');
+      }
+      else{
+        return back()-> with('errormsjfinalizado', 'Error al finalizar');
+      }
+      return back();
     }
 
     public function fotoreto_crear(){

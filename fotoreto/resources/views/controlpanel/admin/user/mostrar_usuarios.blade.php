@@ -1,10 +1,10 @@
 @if(session()->has('msj'))
 <div class="alert alert-success" role="alert">{{ session('msj') }}</div>
-
 @endif
 @if(session()->has('errormsj'))
 <div class="alert alert-danger" role="alert">Error al guardar los datos</div>
 @endif
+
 <table class="table table-striped">
   <thead>
       <th>Nombre</th><th>Email</th><th>Dirección</th><th>Telefono</th><th>Puntuación</th><th>Tipo</th><td>Actualizar</td>
