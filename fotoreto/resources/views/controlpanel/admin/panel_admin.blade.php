@@ -15,9 +15,9 @@
           </div>
           <div id="collapseOne" class="panel-collapse collapse @isset($user) in  @endisset @isset($participacion) in  @endisset @isset($datos_usuario) in  @endisset  " role="tabpanel" aria-labelledby="headingOne">
             <div class="panel-body" >
-                <div><button class="btn btn-default btn-block" type="button" name="button"><a href="{{ url('/administrar') }}" >Administrar</a></button></div>
-                <div><button class="btn btn-default btn-block" type="button"  name="button"><a href="{{ url('/participacion') }}">Participacion</a></button></div>
-                <div><button class="btn btn-default btn-block" type="button"  name="button"><a href="{{ url('/datos_usuario') }}">Datos Generales</a></button></div>
+                <div><a href="{{ url('/administrar') }}"><button class="btn btn-default btn-block" type="button" name="button">Administrar</button></a></div>
+                <div><a href="{{ url('/participacion') }}"><button class="btn btn-default btn-block" type="button"  name="button">Participacion</button></a></div>
+                <div><a href="{{ url('/datos_usuario') }}"><button class="btn btn-default btn-block" type="button"  name="button">Datos Generales</button></a></div>
               </li>
             </div>
           </div>
@@ -32,11 +32,11 @@
           </div>
           <div id="collapseTwo" class="panel-collapse collapse @isset($fotoreto_iniciar) in  @endisset @isset($fotoreto_proceso) in  @endisset @isset($fotoreto_filtrar) in  @endisset @isset($fotoreto_resultados) in  @endisset @isset($fotoreto_datos_generales) in  @endisset @isset($fotoreto_crear) in @endisset" role="tabpanel" aria-labelledby="headingTwo">
             <div class="panel-body">
-                <div><button class="btn btn-default btn-block" type="button" name="button"><a href="{{ url('/fotoreto_iniciar_finalizar') }}">Iniciar / Finalizar</a> </button></div>
-                <div><button class="btn btn-default btn-block" type="button" name="button"><a href="{{ url('/fotoreto_filtrar') }}">Filtrar</a> </button></div>
-                <div><button class="btn btn-default btn-block" type="button" name="button"><a href="{{ url('/fotoreto_proceso') }}">Proceso</a> </button></div>
-                <div><button class="btn btn-default btn-block" type="button" name="button"><a href="{{ url('/fotoreto_resultados') }}">Resultados</a> </button></div>
-                <div><button class="btn btn-default btn-block" type="button" name="button"><a href="{{ url('/fotoreto_datos_generales') }}">Datos Generales</a> </button></div>
+                <div><a href="{{ url('/fotoreto_iniciar_finalizar') }}"><button class="btn btn-default btn-block" type="button" name="button">Iniciar / Finalizar</button></a></div>
+                <div><a href="{{ url('/fotoreto_filtrar') }}"><button class="btn btn-default btn-block" type="button" name="button">Filtrar</button></a></div>
+                <div><a href="{{ url('/fotoreto_proceso') }}"><button class="btn btn-default btn-block" type="button" name="button">Proceso</button></a></div>
+                <div><a href="{{ url('/fotoreto_resultados') }}"><button class="btn btn-default btn-block" type="button" name="button">Resultados</button></a></div>
+                <div><a href="{{ url('/fotoreto_datos_generales') }}"><button class="btn btn-default btn-block" type="button" name="button">Datos Generales</button></a></div>
             </div>
           </div>
         </div>
@@ -50,10 +50,10 @@
           </div>
           <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
             <div class="panel-body">
-                <div><button class="btn btn-default btn-block" type="button" name="button"><a href="{{ url('/contenido_banner') }}">Banner</a></button></div>
-                <div><button class="btn btn-default btn-block" type="button" name="button"><a href="{{ url('/contenido_publicidad') }}">Publicidad</a> </button></div>
-                <div><button class="btn btn-default btn-block" type="button" name="button"><a href="{{ url('/contenido_tutoriales') }}">Tutoriales</a> </button></div>
-                <div><button class="btn btn-default btn-block" type="button" name="button"><a href="{{ url('/contenido_productos') }}">Productos</a></button></div>
+                <div><a href="{{ url('/contenido_banner') }}"><button class="btn btn-default btn-block" type="button" name="button">Banner</button></a></div>
+                <div><a href="{{ url('/contenido_publicidad') }}"><button class="btn btn-default btn-block" type="button" name="button">Publicidad</button></a></div>
+                <div><a href="{{ url('/contenido_tutoriales') }}"><button class="btn btn-default btn-block" type="button" name="button">Tutoriales</button></a></div>
+                <div><a href="{{ url('/contenido_productos') }}"><button class="btn btn-default btn-block" type="button" name="button">Productos</button></a></div>
             </div>
           </div>
         </div>
@@ -67,10 +67,10 @@
           </div>
           <div id="collapseFour" class="panel-collapse collapse @isset($contract_pendientes) in  @endisset @isset($contract_in_process) in  @endisset @isset($contract_terminados) in  @endisset @isset($contract_datos_generales) in  @endisset " role="tabpanel" aria-labelledby="headingFour">
             <div class="panel-body">
-                <div><button class="btn btn-default btn-block" type="button" name="button"><a href="{{ url('/contract_pendientes') }}">Pendientes</a></button></div>
-                <div><button class="btn btn-default btn-block" type="button" name="button"><a href="{{ url('/contract_in_process') }}">En Proceso</a></button></div>
-                <div><button class="btn btn-default btn-block" type="button" name="button"><a href="{{ url('/contract_terminados') }}">Terminados</a></button></div>
-                <div><button class="btn btn-default btn-block" type="button" name="button"><a href="{{ url('/contract_datos_generales') }}">Datos Generales</a> </button></div>
+                <div><a href="{{ url('/contract_pendientes') }}"><button class="btn btn-default btn-block" type="button" name="button">Pendientes</button></a></div>
+                <div><a href="{{ url('/contract_in_process') }}"><button class="btn btn-default btn-block" type="button" name="button">En Proceso</button></a></div>
+                <div><a href="{{ url('/contract_terminados') }}"><button class="btn btn-default btn-block" type="button" name="button">Terminados</button></a></div>
+                <div><a href="{{ url('/contract_datos_generales') }}"><button class="btn btn-default btn-block" type="button" name="button">Datos Generales</button></a></div>
             </div>
           </div>
         </div>
