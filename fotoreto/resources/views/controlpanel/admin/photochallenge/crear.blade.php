@@ -4,8 +4,6 @@
 <h1>Crear Nuevo Fotoreto</h1>
 <br>
 
-
-
 <div class="col-md-8">
 
 
@@ -27,7 +25,7 @@
   </div>
   <div class="form-group">
     <label for="exampleInputEmail1">Url Video</label>
-    <input type="url" class="form-control" name="urlVideo" placeholder="Url del video en YouTube" required>
+    <input type="url" class="form-control" name="url_video" placeholder="Url del video en YouTube" required>
   </div>
 
   <button type="submit" class="btn btn-success">Crear Nuevo</button>

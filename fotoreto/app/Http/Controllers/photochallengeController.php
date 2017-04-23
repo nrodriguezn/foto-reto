@@ -41,6 +41,7 @@ class photochallengeController extends Controller
      */
     public function store(Request $request)
     {
+
             $this->validate($request, [
               'name' => 'required',
               'description' => 'required',
@@ -56,13 +57,14 @@ class photochallengeController extends Controller
             $photochallenge -> url_video = $request->url_video;
             $photochallenge -> status = 1;
 
+
+
             if($photochallenge->save()){
             return redirect('fotoreto_iniciar_finalizar');
             }
             else {
             return back()->with('msj', 'Error');
             }
-
             return back();
 
         }
@@ -135,7 +137,7 @@ class photochallengeController extends Controller
 
     public function fotoreto_iniciar_finalizar()
     {
-        $fotoreto_iniciar =  photochallenge::all();
+        $fotoreto_iniciar =  photochallenge::all()->sortByDesc("id");;
         if($fotoreto_activo = DB::select('select * from photochallenges where status = 1'))
           return view('controlpanel/admin/panel_admin')
             ->with(['fotoreto_activo' => $fotoreto_activo])
