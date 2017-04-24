@@ -143,7 +143,5 @@ class photoController extends Controller
       return view('welcome');
     }
 
-    public function first_upload(){
 
-    }
 }

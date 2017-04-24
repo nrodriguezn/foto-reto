@@ -159,6 +159,28 @@ class photochallengeController extends Controller
       return back();
     }
 
+    public function fotoreto_filtrar(){
+      $fotoreto_filtrar = new photochallenge;
+      $fotoreto = DB::table('photochallenges')->where('id', '1')->value('id');
+      if($fotos = DB::table('photos')->where('id_photochallenge', $fotoreto)->get()){
+
+            return view('controlpanel/admin/panel_admin')
+            ->with(['fotoreto_filtrar' => $fotoreto_filtrar])
+            ->with(['fotos' => $fotos]);
+      }
+      return view('controlpanel/admin/panel_admin')->with(['fotoreto_filtrar' => $fotoreto_filtrar]);
+    }
+
+    public function fotoreto_filtrar_decision(Request $request, $id){
+      dd('estoy aqui');
+      if($request -> aceptar){
+        dd($request->aceptar);
+      }
+      elseif($request -> rechazar){
+        dd($request -> rechazar);
+      }
+    }
+
     public function fotoreto_crear(){
       $fotoreto_crear = new photochallenge;
       return view('controlpanel/admin/panel_admin')->with(['fotoreto_crear' => $fotoreto_crear]);
@@ -167,11 +189,6 @@ class photochallengeController extends Controller
     public function fotoreto_proceso(){
       $fotoreto_proceso = new photochallenge;
       return view('controlpanel/admin/panel_admin')->with(['fotoreto_proceso' => $fotoreto_proceso]);
-    }
-
-    public function fotoreto_filtrar(){
-      $fotoreto_filtrar = new photochallenge;
-      return view('controlpanel/admin/panel_admin')->with(['fotoreto_filtrar' => $fotoreto_filtrar]);
     }
 
     public function fotoreto_resultados(){
