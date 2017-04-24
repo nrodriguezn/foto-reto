@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Http\Requests;
+
 use App\Photo;
 
 Use Storage;
@@ -55,13 +57,16 @@ class photoController extends Controller
             $photo -> photo_puntuation = 0;
             $photo -> visiting_sum = 0;
 
-            $img = $request -> file('img');
+            $img = $request -> file('urlImg');
+
             $file_route = time().'_'.$img -> getClientOriginalName();
 
             Storage::disk('imgParticipante')->put($file_route, file_get_contents($img->getRealPath() ) );
+            //nombre del archivo y contenido.
             //Storage::disk('imgParticipante')->delete($request -> img);
 
             $photo-> urlImg_photo = $file_route;
+
 
           if($photo->save()){
             return back()->with('msj', 'Subida con Exito!, el administrador revisara que este todo bien y

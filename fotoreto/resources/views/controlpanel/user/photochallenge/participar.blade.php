@@ -14,16 +14,20 @@
                 </div>
                 <div class="form-group">
                   <label> Imagen </label>
-                  <input type="file" name="img" required> 
+                  <input type="file" name="urlImg" required>
                   <p>No puede superar los 5Mb</p>
                 </div>
           <button type="submit" class="btn btn-success" name="button">Publicar</button>
-
-
       </form>
       @else
         <h1>No hay fotoretos activos aún</h1>
         <p>Quedate al pendiente! muy pronto se publicará un nuevo FotoReto!</p>
+      @endif
+      @if(session()->has('msj'))
+      <div class="alert alert-success" role="alert">{{ session('msj') }}</div>
+      @endif
+      @if(session()->has('errormsj'))
+      <div class="alert alert-danger" role="alert">Error al guardar los datos</div>
       @endif
   <br><br>
 </div>
