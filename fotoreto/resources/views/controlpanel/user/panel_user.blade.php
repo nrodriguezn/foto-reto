@@ -28,7 +28,7 @@
               </a>
             </h4>
           </div>
-          <div id="collapseTwo" class="panel-collapse collapse @isset($fotoreto_iniciar) in  @endisset @isset($fotoreto_proceso) in  @endisset @isset($fotoreto_filtrar) in  @endisset @isset($fotoreto_resultados) in  @endisset @isset($fotoreto_datos_generales) in  @endisset" role="tabpanel" aria-labelledby="headingTwo">
+          <div id="collapseTwo" class="panel-collapse collapse @isset($fotoreto_participar) in  @endisset @isset($fotoreto_proceso) in  @endisset @isset($fotoreto_filtrar) in  @endisset @isset($fotoreto_resultados) in  @endisset @isset($fotoreto_datos_generales) in  @endisset" role="tabpanel" aria-labelledby="headingTwo">
             <div class="panel-body">
                 <div><a href="{{ url('/fotoreto_participar') }}"><button class="btn btn-default btn-block" type="button" name="button">Participar</button></a></div>
                 <div><a href="{{ url('/fotoreto_proceso') }}"><button class="btn btn-default btn-block" type="button" name="button">Proceso</button></a></div>
@@ -60,31 +60,18 @@
   <!-- Start Date Submenu -->
   <div class="col-md-10">
 
-<!-- ADMIN USUARIO -->
+<!-- USUARIO -->
     @if(isset($user))
-      @include('controlpanel/admin/user/mostrar_usuarios')
-    @elseif(isset($participacion))
-      @include('controlpanel/admin/user/participacion')
-    @elseif(isset($datos_usuario))
-      @include('controlpanel/admin/user/datos_usuario')
+      @include('controlpanel/user/user/mostrar_usuario')
 
 
-<!-- ADMIN FOTORETO -->
-    @elseif(isset($fotoreto_iniciar))
-      @include('controlpanel/admin/photochallenge/iniciar')
-    @elseif(isset($fotoreto_proceso))
-      @include('controlpanel/admin/photochallenge/proceso')
-    @elseif(isset($fotoreto_filtrar))
-      @include('controlpanel/admin/photochallenge/filtrar')
-    @elseif(isset($fotoreto_resultados))
-      @include('controlpanel/admin/photochallenge/resultados')
-    @elseif(isset($fotoreto_resultados))
-      @include('controlpanel/admin/photochallenge/resultados')
-    @elseif(isset($fotoreto_datos_generales))
-      @include('controlpanel/admin/photochallenge/datos_generales')
+<!-- FOTORETO -->
+    @elseif(isset($fotoreto_participar))
+      @include('controlpanel/user/photochallenge/participar')
 
 
-<!-- ADMIN CONTRATO -->
+
+<!--  CONTRATO -->
     @elseif(isset($contract_pendientes))
       @include('controlpanel/admin/contract/contract_pendientes')
     @elseif(isset($contract_in_process))
@@ -96,7 +83,7 @@
 
 <!--FIRST VIEW-->
     @else
-      @include('controlpanel/admin/first_view')
+      @include('controlpanel/user/first_view')
     @endif
 
 

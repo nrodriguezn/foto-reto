@@ -46,6 +46,10 @@ return [
                 'driver' => 'local',
                'root' => public_path('imgPhotoChallenge'),
             ],
+            'imgParticipante' => [
+              'driver' => 'local',
+              'root' => public_path('imgParticipante'),
+            ],
         'local' => [
             'driver' => 'local',
             'root' => storage_path('app'),

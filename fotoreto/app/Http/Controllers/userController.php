@@ -88,38 +88,62 @@ class userController extends Controller
      */
     public function update(Request $request, $id)
     {
+    /*  $img = $request -> file('urlImg');
+      $file_route = time().'_'.$img -> getClientOriginalName();
+      Storage::disk('imgNoticias')->put($file_route, file_get_contents($img->getRealPath() ) );
+      Storage::disk('imgNoticias')->delete($request -> img);
+      $noticia->urlImg=$file_route;  */
+      if(auth::user()->id_user_type == 1){
+          $this->validate($request, [
+          'name' => 'required',
+          'email' => 'required',
+          'id_direction' => 'required',
+          'phone' => 'required',
+          'user_puntuation' => 'required',
+          'id_user_type' => 'required'
 
-      $this->validate($request, [
-      'name' => 'required',
-      'email' => 'required',
-      'id_direction' => 'required',
-      'user_puntuation' => 'required',
-      'id_user_type' => 'required'
-          ]);
+              ]);
 
-          $user = User::find($id);
-          $user -> name = $request->name;
-          $user -> email = $request->email;
-          $user -> id_direction = $request->id_direction;
-          $user -> user_puntuation = $request->user_puntuation;
-          $user -> phone = $request->phone;
-          $user -> id_user_type = $request->id_user_type;
-        //  user->save();
+              $user = User::find($id);
+              $user -> name = $request->name;
+              $user -> email = $request->email;
+              $user -> id_direction = $request->id_direction;
+              $user -> user_puntuation = $request->user_puntuation;
+              $user -> phone = $request->phone;
+              $user -> id_user_type = $request->id_user_type;
 
-        /*  $img = $request -> file('urlImg');
-          $file_route = time().'_'.$img -> getClientOriginalName();
-          Storage::disk('imgNoticias')->put($file_route, file_get_contents($img->getRealPath() ) );
-          Storage::disk('imgNoticias')->delete($request -> img);
-          $noticia->urlImg=$file_route;  */
+            if($user->save()){
+              return back()->with('msj', 'Datos Actualizados');
+            }
+            else {
+              return back()->with('errormsj', 'Error');
+            }
+            return back();
+      }
+      elseif(auth::user()->id_user_type == 2){
 
-        if($user->save()){
-          return back()->with('msj', 'Datos Actualizados');
-        }
-        else {
-          return back()->with('errormsj', 'Error');
-        }
+            $this->validate($request, [
+            'name' => 'required',
+            'email' => 'required',
+            'id_direction' => 'required',
+            'phone' => 'required'
+            ]);
 
-        return back();
+            $user = User::find($id);
+            $user -> name = $request->name;
+            $user -> email = $request->email;
+            $user -> id_direction = $request->id_direction;
+            $user -> phone = $request->phone;
+
+            if($user->save()){
+              return back()->with('msj', 'Datos Actualizados');
+            }
+            else {
+              return back()->with('errormsj', 'Error');
+            }
+
+            return back();
+      }
     }
 
     /**
@@ -134,8 +158,16 @@ class userController extends Controller
     }
 
     public function administrar(){
-      $usuario = User::all();
-     return view('controlpanel/admin/panel_admin')->with(['user' => $usuario]);
+      if(Auth::user()->id_user_type == 1){
+        $usuario = User::all();
+       return view('controlpanel/admin/panel_admin')->with(['user' => $usuario]);
+      }
+      elseif(Auth::user()->id_user_type == 2){
+        $id = auth::user()->id;
+        $user = User::find($id);
+        return view('controlpanel/user/panel_user')->with(['user' => $user]);
+      }
+
     }
 
     public function participacion(){

@@ -183,5 +183,18 @@ class photochallengeController extends Controller
       return view('controlpanel/admin/panel_admin')->with(['fotoreto_datos_generales' => $fotoreto_datos_generales]);
     }
 
+    //CONTROLADOR DEL usuario
+    public function fotoreto_participar(){
+      //si ya participo debe ocurrir una accion
+      $fotoreto_participar = new photochallenge;
+      if($fotoreto = DB::select('select * from photochallenges where status = 1')){
+        return view('controlpanel/user/panel_user')->with(['fotoreto_participar' => $fotoreto_participar])->with(['fotoreto'=>$fotoreto]);}
+      else {
+        return view('controlpanel/user/panel_user')->with(['fotoreto_participar' => $fotoreto_participar]);
+      }
+    }
+
+
+
 
 }
