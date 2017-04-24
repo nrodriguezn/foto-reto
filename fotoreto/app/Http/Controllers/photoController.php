@@ -45,8 +45,13 @@ class photoController extends Controller
     public function store(Request $request)
     {
       //validate request
-            $fotoreto = DB::select('select id from photochallenges where status = 1');
-
+      $this->validate($request, [
+        'name' => 'required',
+        'description' => 'required',
+        'urlImg' => 'required'
+      ]);
+          //  $fotoreto = DB::select('select * from photochallenges where status = 1');
+            $fotoreto = DB::table('photochallenges')->where('id', '1')->value('id');
             $photo = new Photo;
 
             $photo -> id_user = auth::user()->id;

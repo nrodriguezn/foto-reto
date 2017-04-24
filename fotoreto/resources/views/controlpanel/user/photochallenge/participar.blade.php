@@ -23,6 +23,7 @@
         <h1>No hay fotoretos activos aún</h1>
         <p>Quedate al pendiente! muy pronto se publicará un nuevo FotoReto!</p>
       @endif
+      <br>
       @if(session()->has('msj'))
       <div class="alert alert-success" role="alert">{{ session('msj') }}</div>
       @endif
