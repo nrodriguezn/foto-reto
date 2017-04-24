@@ -45,7 +45,6 @@ Route::get('/fotoreto_resultados', 'photochallengeController@fotoreto_resultados
 Route::get('/fotoreto_datos_generales', 'photochallengeController@fotoreto_datos_generales');
 Route::get('/fotoreto_finalizar/{id}', 'photochallengeController@fotoreto_finalizar');
 Route::get('/fotoreto_participar', 'photochallengeController@fotoreto_participar');
-Route::get('/fotoreto_filtrar_decision', 'photochallengeController@fotoreto_filtrar_decision');
 
 
 
@@ -53,6 +52,7 @@ Route::get('/fotoreto_filtrar_decision', 'photochallengeController@fotoreto_filt
 //RUTAS DE photo
 Route::resource('/photo', 'photoController');
 Route::get('/', 'photoController@photochallenge_desktop_show');  //return view('welcome'); -> desde el controlador cargo las fotos
+Route::post('/photo_decision', 'photoController@photo_decision')->name('photo.decision');
 
 
 

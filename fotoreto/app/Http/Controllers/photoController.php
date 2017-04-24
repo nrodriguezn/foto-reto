@@ -143,5 +143,25 @@ class photoController extends Controller
       return view('welcome');
     }
 
+    public function photo_decision(Request $request){
+      //solo actualiza admin_acepted = 1
+      if($request -> aceptar){
+          $id = $request -> id_foto;
+          if(DB::table('photos')->where('id', $id)->update(['admin_acepted' => 1])){
+            return back()->with('msj', 'Foto Publicada');
+          }
+          else{
+            return back()-> with('errormsj', 'Ha ocurrido un error');
+          }
+          return back();
+
+      }
+      elseif($request -> rechazar){
+          dd('rechazar, por hacer esta seccion...TOO EASY, VERY VERY GOOD MY FRIEND');
+      }
+
+
+    }
+
 
 }
