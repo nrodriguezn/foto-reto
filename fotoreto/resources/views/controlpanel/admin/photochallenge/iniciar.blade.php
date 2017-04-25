@@ -40,7 +40,7 @@
 
 @if(isset($fotoreto_activo))
   @foreach($fotoreto_activo as $fa)
-    <form class="form-horizontal" role="form" action="{{ route('photochallenge.update', $fa->id) }}" method="POST" enctype="multipart/form-data" >
+    <form class="form-horizontal" role="form" action="" method="POST" enctype="multipart/form-data" >
           <input name="_method" type="hidden" value="PUT">
               {{ csrf_field() }}
           <div class="form-group">
@@ -59,27 +59,19 @@
             <label for="exampleInputEmail1">Url Video</label>
             <input type="url" class="form-control" name="url_video" value="{{ $fa->url_video }}">
           </div>
-        <div class="col-md-4"> <button type="submit" class="btn btn-success">Actualizar</button></div>
+        <div class="col-md-4"><button  class="btn btn-success btn-lg btn-block"
+          name="aceptar" value="aceptar" onclick=this.form.action="{{ route('photochallenge.update', $fa->id) }}">Actualizar</button></div>
         <div class="col-md-4"> Count Down</div>
+        <div class="col-md-4"><button class="btn btn-danger btn-lg btn-block"
+          name="finalizar" value="finalizar" onclick=this.form.action="{{ route('photochallenge.update', $fa->id) }}"> Finalizar</button></div>
      </form>
 
-<!-- BOTON FUNCIONANDO MAL -->
-
-     <form role="form" action="{{ url('photochallenge_finalizar') }}" method="POST" enctype="multipart/form-data">
-       <input name="_method" type="hidden" value="PUT">
-           {{ csrf_field() }}
-          <input type="hidden" name="id" value="{{ $fa->id }}">
-        <div class="col-md-4"> <button type="submit" class="btn btn-danger"> Finalizar </button> </div>
-      </form>
-
-  <!--- FIN BOTON --->
-  
-    <br><br>
+    <br><br><br>
     @if(session()->has('msj'))
       <div class="alert alert-success" role="alert">{{ session('msj') }}</div>
     @endif
     @if(session()->has('errormsj'))
-      <div class="alert alert-danger" role="alert">Error al guardar los datos</div>
+      <div class="alert alert-danger" role="alert">{{ session('errormsj') }}</div>
     @endif
     <br>
   @endforeach
