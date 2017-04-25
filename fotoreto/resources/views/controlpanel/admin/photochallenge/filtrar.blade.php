@@ -11,6 +11,8 @@
           <div class="alert alert-danger" role="alert" align="center">{{ session('errormsj')}}</div>
         @endif
           <br>
+
+
         @if(isset($fotos))
         <table class="table table-striped">
           <thead>
@@ -36,5 +38,5 @@
       <h1>No hay fotos por filtrar! :)  Buen Trabajo!</h1>
       <p>Mantente pendiente por nuevas actualizaciones, los usuarios seguiran publicando sus Fotografias...</p>
 
-    @endif
+      @endif
 </div>

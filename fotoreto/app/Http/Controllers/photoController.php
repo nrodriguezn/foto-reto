@@ -51,7 +51,7 @@ class photoController extends Controller
         'urlImg' => 'required'
       ]);
           //  $fotoreto = DB::select('select * from photochallenges where status = 1');
-            $fotoreto = DB::table('photochallenges')->where('id', '1')->value('id');
+            $fotoreto = DB::table('photochallenges')->latest()->value('id');
             $photo = new Photo;
 
             $photo -> id_user = auth::user()->id;

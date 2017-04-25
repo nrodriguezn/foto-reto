@@ -180,7 +180,7 @@ class photochallengeController extends Controller
             return view('controlpanel/admin/panel_admin')
             ->with(['fotoreto_filtrar' => $fotoreto_filtrar])
             ->with(['fotos' => $fotos]);
-      }
+      }else
       return view('controlpanel/admin/panel_admin')->with(['fotoreto_filtrar' => $fotoreto_filtrar]);
     }
 
