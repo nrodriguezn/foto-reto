@@ -52,7 +52,8 @@ Route::get('/fotoreto_participar', 'photochallengeController@fotoreto_participar
 //RUTAS DE photo
 Route::resource('/photo', 'photoController');
 Route::get('/', 'photoController@photochallenge_desktop_show');  //return view('welcome'); -> desde el controlador cargo las fotos
-Route::get('/photo_first_upload', 'photoController@first_upload');
+Route::post('/photo_decision', 'photoController@photo_decision')->name('photo.decision');
+
 
 
 //RUTAS DE direction
