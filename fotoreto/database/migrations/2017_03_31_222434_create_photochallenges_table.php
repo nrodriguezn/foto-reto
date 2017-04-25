@@ -20,6 +20,7 @@ class CreatePhotochallengesTable extends Migration
             $table->string('url_video');
             $table->boolean('status');
             $table->timestamp('end_date');
+            $table->timestamp('count_down');
             $table->timestamps();
         });
     }

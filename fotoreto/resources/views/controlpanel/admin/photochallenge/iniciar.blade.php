@@ -52,8 +52,13 @@
             <input class="form-control" name="description" rows="3" value="{{ $fa->description }}"></textarea>
           </div>
           <div class="form-group">
-            <label for="exampleInputEmail1">Fecha Finalización </label>
-            <input type="datetime-local" class="form-control" name="end_date" value="{{ $fa->end_date }}">
+            <div class="col-md-6" box-sizing="border-box">
+              <label for="exampleInputEmail1">Fecha Finalización </label>
+              <input type="datetime-local" class="form-control" name="end_date" value="{{ $fa->end_date }}">
+            </div>
+            <div class="col-md-6">
+              @include('controlpanel/admin/photochallenge/regresiva')
+            </div>
           </div>
           <div class="form-group">
             <label for="exampleInputEmail1">Url Video</label>
@@ -61,7 +66,7 @@
           </div>
         <div class="col-md-4"><button  class="btn btn-success btn-lg btn-block"
           name="aceptar" value="aceptar" onclick=this.form.action="{{ route('photochallenge.update', $fa->id) }}">Actualizar</button></div>
-        <div class="col-md-4"> Count Down</div>
+        <div class="col-md-4" align ="center"> </div>
         <div class="col-md-4"><button class="btn btn-danger btn-lg btn-block"
           name="finalizar" value="finalizar" onclick=this.form.action="{{ route('photochallenge.update', $fa->id) }}"> Finalizar</button></div>
      </form>

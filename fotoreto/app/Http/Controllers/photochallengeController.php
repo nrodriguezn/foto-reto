@@ -149,11 +149,46 @@ class photochallengeController extends Controller
 
     public function fotoreto_iniciar_finalizar()
     {
+
         $fotoreto_iniciar =  photochallenge::all()->sortByDesc("id");;
-        if($fotoreto_activo = DB::select('select * from photochallenges where status = 1'))
-          return view('controlpanel/admin/panel_admin')
+        if($fotoreto_activo = DB::select('select * from photochallenges where status = 1')){ //retorna si hay fotoretos activos
+
+          function multiexplode ($delimiters,$string) {
+
+              $ready = str_replace($delimiters, $delimiters[0], $string);
+              $launch = explode($delimiters[0], $ready);
+              return  $launch;
+          }
+
+            $fecha = getdate();  //obtengo la fecha y hora actual
+
+            $hora_actual = array(     //las guardo en un arreglo
+              0 => $fecha['year'],
+              1 => $fecha['mon'],
+              2 => $fecha['mday'],
+              3 => $fecha['hours'],
+              4 => $fecha['minutes'],
+              5 => $fecha['seconds']
+            );
+              //separo la fecha obtenida de la base de datos... end_date
+            list($ano, $meses ,$dias, $horas, $minutos, $segundos) = multiexplode(array("-",":", " "), $fotoreto_activo[0]->end_date);
+
+              //resto ambas fechas para obtener el tiempo restante
+              $cdano = $ano - $hora_actual['0'];
+              $cdmes = $meses - $hora_actual['1'];
+              $cddia = $dias - $hora_actual['2'];
+              $cdhora = $horas - $hora_actual['3'];
+              $cdminutos = $minutos - $hora_actual['4'];
+              $cdsegundos = $segundos - $hora_actual['5'];
+              //vuelvo a armar la fecha de finalización del fotoreto para luego simplemente enviarla en la variable correspondiente
+
+
+
+
+            return view('controlpanel/admin/panel_admin')
             ->with(['fotoreto_activo' => $fotoreto_activo])
             ->with(['fotoreto_iniciar' => $fotoreto_iniciar]);
+          }
         else
           return view('controlpanel/admin/panel_admin')
             ->with(['fotoreto_iniciar' => $fotoreto_iniciar]);
