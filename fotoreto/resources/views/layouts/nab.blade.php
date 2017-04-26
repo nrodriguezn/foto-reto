@@ -16,7 +16,7 @@
 
 
       </head>
-  <body>
+  <body id="color_body">
 
 
     <!-- Start Header Section -->
@@ -44,7 +44,7 @@
 
           							<li><a href="#">Productos<i class="fa fa-angle-down"></i></a>
           							</li>
-                          <li><a  href="{{ url('/contact') }}">Quienes Somos</a></li>
+                          <li><a  href="{{ route('user.contact') }}">Quienes Somos</a></li>
           								<li><a  href="{{ url('/contract') }}">Contratar</a></li>
                           @if (Route::has('login'))
                             @if (Auth::check())

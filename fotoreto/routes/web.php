@@ -69,4 +69,4 @@ Route::get('/contract_datos_generales', 'contractController@contract_datos_gener
 
 
 //RUTAS DE contact
-Route::resource('/contact', 'contactController');
+Route::get('/contact', 'userController@contact')->name('user.contact');

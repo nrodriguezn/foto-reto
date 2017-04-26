@@ -11,72 +11,71 @@
 <!--end preloader -->
 
 <!-- Mostrando imagenes-->
-@if(isset($photos))
-  @foreach($photos as $n)
-    $n->photo_name
-    <img src="imgPhoto/{{ $n->urlImg }}" style="max-width: 200px;">
-  @endforeach
-@endif
-<!-- fin mostrando imagenes-->
 
-
-
-
-
-<!-- start about Section-->
-<section id="abt_sec">
-	<div class="container">
-				<div class="title_sec">
-					<h1>En Construccion</h1>
-					<h2>Tareas por hacer</h2>
-        </div>
-				<div class="abt">
-					<p>Programar controlador Usuarios</p>
-          <p>Programar controlador FotoReto</p>
-          <p>Mostrar por pantalla estos datos</p>
-			</div>
-	</div>
-</section>
-
-<!--End About Section -->
-
-<!-- start Counting section
-<section id="counting_sec">
 <div class="container">
-	<div class="row">
 
-		<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-			<div class="counting_sl">
-			<i class="fa fa-user"></i>
-			<h2 class="counter">43,753</h2>
-			<h4>Happy Clients</h4>
-			</div>
-		</div>
-		<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-			<div class="counting_sl">
-			<i class="fa fa-desktop"></i>
-			<h2 class="counter">20,210</h2>
-			<h4>Complete Project</h4>
-			</div>
-		</div>
-		<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-			<div class="counting_sl">
-			<i class="fa fa-ticket"></i>
-			<h2 class="counter">43,753</h2>
-			<h4>Answered Tickets</h4>
-			</div>
-		</div>
-		<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-			<div class="counting_sl">
-			<i class="fa fa-clock-o"></i>
-			<h2 class="counter">45,105</h2>
-			<h4>Development Hours</h4>
-			</div>
-		</div>
-	</div>
+    @if(isset($photochallenge))
+
+    <section id="ctn_sec">
+    	<div class="container">
+    		<div class="row">
+    			<div class="col-md-12">
+    				<div class="title_sec">
+    					<h1>{{ $photochallenge->name }}</h1>
+    				</div>
+    			</div>
+    			<div class="col-sm-6">
+    				<div id="cnt_form">
+    						  <iframe width="560" height="315" src="{{ $photochallenge->url_video }}" frameborder="3" allowfullscreen></iframe>
+    				</div>
+    			</div>
+    			<div class="col-lg-6 col-md-6 col-sm-6">
+    				<div class="cnt_info">
+    					<ul>
+    						<li></i><p>{{ $photochallenge -> description }}</p></li>
+    						<li></i><p>Finaliza En: {{ $photochallenge-> end_date }}</p></li>
+
+    					</ul>
+    				</div>
+    			</div>
+    		</div>
+    	</div>
+    </section>
+          @if(isset($photos))
+              @foreach($photos as $n)
+                <section id="mostrar_fotos">
+                  <img src="imgParticipante/{{ $n->urlImg_photo }}" style="max-width: 500px;">
+                  <h1>{{ $n->photo_name }}</h1>
+                  <p>{{ $n-> description }} </p>
+                </section>
+              @endforeach
+          @else
+          <section id="abt_sec">
+            <div class="container">
+                  <div class="title_sec">
+                    <h1>Aún no se publican fotos</h1>
+                    <h2>Para publicar, ve a tu panel de control, entra a fotoreto y haz click en participar!</h2>
+                  </div>
+                  <div class="abt">
+                    <p>No esperes mas, puedes ser contratado para trabajar de lo que te gusta!</p>
+                    <p>Mas de 1 Personas hasta ahora fueron contratados!</p>
+
+                </div>
+            </div>
+          </section>
+          @endif
+
+
+    @endif
+
 </div>
-</section>
- end section-->
+
+
+
+
+
+
+
 
 <!-- start progress bar Section
 <section id="skill_sec">
@@ -523,47 +522,7 @@ End pricing Section -->
 </section>
  End Happy Client  Section -->
 
-<!-- start contact us Section -->
-<section id="ctn_sec">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-12">
-				<div class="title_sec">
-					<h1>FotoReto</h1>
-					<h2>Contactanos para compartir tus mejoras</h2>
-				</div>
-			</div>
-			<div class="col-sm-6">
-				<div id="cnt_form">
-					<form id="contact-form" class="contact" name="contact-form" method="post" action="send-mail.php">
-						<div class="form-group">
-						<input type="text" name="name" class="form-control name-field" required="required" placeholder="Your Name">
-						</div>
-						<div class="form-group">
-							<input type="email" name="email" class="form-control mail-field" required="required" placeholder="Your Email">
-						</div>
-						<div class="form-group">
-							<textarea name="message" id="message" required="required" class="form-control" rows="8" placeholder="Message"></textarea>
-						</div>
-						<div class="form-group">
-							<button type="submit" class="btn btn-primary">Send</button>
-						</div>
-					</form>
-				</div>
-			</div>
-			<div class="col-lg-6 col-md-6 col-sm-6">
-				<div class="cnt_info">
-					<ul>
-						<li></i><p>U Diego Portales</p></li>
-						<li></i><p>contact@fotoreto.com</p></li>
-						<li></i><p>+56 9 5108 6820</p></li>
-					</ul>
-				</div>
-			</div>
-		</div>
-	</div>
-</section>
-<!--End contact us  Section -->
+
 
 
 @include('layouts.footer')
@@ -591,49 +550,9 @@ End pricing Section -->
 
 <script type="text/javascript">
 
-$(document).ready(function(){
-   $('.show_hide').showHide({
-		speed: 1000,  // speed you want the toggle to happen
-		easing: '',  // the animation effect you want. Remove this line if you dont want an effect and if you haven't included jQuery UI
-		changeText: 1, // if you dont want the button text to change, set this to 0
-		showText: 'View',// the button text to show when a div is closed
-		hideText: 'Close' // the button text to show when a div is open
-
-	});
 
 
-});
 
-</script>
-<script>
-    jQuery(document).ready(function( $ ) {
-        $('.counter').counterUp({
-            delay: 10,
-            time: 1000
-        });
-    });
-</script>
-
-<script>
-
-  //Hide Overflow of Body on DOM Ready //
-$(document).ready(function(){
-    $("body").css("overflow", "hidden");
-});
-
-// Show Overflow of Body when Everything has Loaded
-$(window).load(function(){
-    $("body").css("overflow", "visible");
-    var nice=$('html').niceScroll({
-	cursorborder:"5",
-	cursorcolor:"#00AFF0",
-	cursorwidth:"3px",
-	boxzoom:true,
-	autohidemode:true
-	});
-
-});
-</script>
 
 
 

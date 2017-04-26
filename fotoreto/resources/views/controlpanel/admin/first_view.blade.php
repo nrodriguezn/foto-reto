@@ -10,52 +10,41 @@
   					<h2>Cantidad de usuarios, estado del fotoreto, inscritos esta semana, fotos subidas esta semana, etc...</h2>
   				</div>
   			</div>
-  		  <div class="skills progress-bar1">
-  				<ul class="col-md-6 col-sm-12 col-xs-12 wow fadeInLeft">
-  					  <li class="progress">
-  							<div class="progress-bar" data-width="85">
-  								  Wordpress 85%
-  							</div>
-  					  </li>
-  					  <li class="progress">
-  							<div class="progress-bar" data-width="65">
-  								  Graphic Design 65%
-  							</div>
-  					  </li>
-  					  <li class="progress">
-  							<div class="progress-bar" data-width="90">
-  								  HTML/CSS Design 90%
-  							</div>
-  					  </li>
-  					  <li class="progress">
-  							<div class="progress-bar" data-width="60">
-  								  SEO 60%
-  							</div>
-  					  </li>
-  				</ul>
-  				<ul class="col-md-6 col-sm-12 col-xs-12 wow fadeInRight">
-  					  <li class="progress">
-  							<div class="progress-bar" data-width="75">
-  								  Agencying 75%
-  							</div>
-  					  </li>
-  					  <li class="progress">
-  							<div class="progress-bar" data-width="95">
-  								  App Development 95%
-  							</div>
-  					  </li>
-  					  <li class="progress">
-  							<div class="progress-bar" data-width="70">
-  								  IT Consultency 70%
-  							</div>
-  					  </li>
-  					  <li class="progress">
-  							<div class="progress-bar" data-width="90">
-  								  Theme Development 90%
-  							</div>
-  					  </li>
-  				</ul>
-  		  </div>
+        <section id="counting_sec">
+        <div class="container">
+        	<div class="row">
+
+        		<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+        			<div class="counting_sl">
+        			<i class="fa fa-user"></i>
+        			<h2 class="counter">43,753</h2>
+        			<h4>Happy Clients</h4>
+        			</div>
+        		</div>
+        		<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+        			<div class="counting_sl">
+        			<i class="fa fa-desktop"></i>
+        			<h2 class="counter">20,210</h2>
+        			<h4>Complete Project</h4>
+        			</div>
+        		</div>
+        		<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+        			<div class="counting_sl">
+        			<i class="fa fa-ticket"></i>
+        			<h2 class="counter">43,753</h2>
+        			<h4>Answered Tickets</h4>
+        			</div>
+        		</div>
+        		<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+        			<div class="counting_sl">
+        			<i class="fa fa-clock-o"></i>
+        			<h2 class="counter">45,105</h2>
+        			<h4>Development Hours</h4>
+        			</div>
+        		</div>
+        	</div>
+        </div>
+        </section>
 
 
   		</div>

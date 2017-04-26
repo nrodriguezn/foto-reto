@@ -180,5 +180,9 @@ class userController extends Controller
       return view('controlpanel/admin/panel_admin')->with(['datos_usuario' => $datos_usuario]);
    }
 
+   public function contact(){
+     return view('layouts/quienes_somos');
+   }
+
 
 }

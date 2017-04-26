@@ -140,8 +140,28 @@ class photoController extends Controller
     {
       //  $photos = photo::all();   //traigo todas las fotos de photo
       //  return view('welcome')->with(['photo'-> $photos]);  //las envio a welcome
-      return view('welcome');
+      $id = DB::table('photochallenges')->where('status',1)->value('id');
+      $photochallenge = DB::table('photochallenges')->where('status',1)->first();
+
+
+
+        if($photochallenge){// hay un fotoreto activo
+          $photos = DB::table('photos')->where([['id_photochallenge',$id],['admin_acepted', 1]])->get();
+
+          if(empty($photos[0])){ // no hay fotos pero si un fotoreto activo
+            return view('welcome')->with(['photochallenge' => $photochallenge]);
+
+          }
+          else {  //hay un fotoreto activo con fotos autorizadas
+          
+            return view('welcome')->with(['photos' => $photos])->with(['photochallenge' => $photochallenge]);
+          }
+        }
+        else{//no hay ni un fotoreto activo
+            return view('welcome');
+        }
     }
+
 
     public function photo_decision(Request $request){
       //solo actualiza admin_acepted = 1

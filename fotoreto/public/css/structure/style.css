@@ -1,3 +1,4 @@
+
 /* USADO EN LA PRIMERA PAGINA PARA TITULO */
 body h1, h2, h3, h4, h5, h6 {
 color : #141414;
@@ -8,7 +9,7 @@ font-weight : 800;
 text-transform : uppercase;
 }
 #abt_sec {
-padding : 200px 0;
+padding : 50px 0;
 }
 .title_sec {
 margin : 0 auto;
@@ -19,7 +20,17 @@ text-align : center;
 margin : 0 auto;
 text-align : center;
 }
+#color_body{
+	background: #F6F6F6;
+}
+/* PRIMERA PAGINA MOSTRAR FOTOS */
+#mostrar_fotos{
+	text-align: center;
+}
+
+/*FIN PRIMERA PAGINA MOSTRAR FOTOS*/
 /*FIN UTILIZADO EN LA PRIMERA PAGINA */
+
 /* Inicio Relativo al NavBar */
 .main_menu_sec {
 background : none 0 0 repeat scroll #372537;
