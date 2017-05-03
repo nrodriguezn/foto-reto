@@ -147,6 +147,8 @@ class photochallengeController extends Controller
         //
     }
 
+
+
     public function fotoreto_iniciar_finalizar()
     {
 
@@ -162,6 +164,7 @@ class photochallengeController extends Controller
 
             $fecha = getdate();  //obtengo la fecha y hora actual
 
+
             $hora_actual = array(     //las guardo en un arreglo
               0 => $fecha['year'],
               1 => $fecha['mon'],
@@ -170,6 +173,10 @@ class photochallengeController extends Controller
               4 => $fecha['minutes'],
               5 => $fecha['seconds']
             );
+
+            $photochallengeController->diferencia_fechas($fecha);
+
+/*
               //separo la fecha obtenida de la base de datos... end_date
             list($ano, $meses ,$dias, $horas, $minutos, $segundos) = multiexplode(array("-",":", " "), $fotoreto_activo[0]->end_date);
 
@@ -177,7 +184,7 @@ class photochallengeController extends Controller
               $cdano = $ano - $hora_actual['0'];
               $cdmes = $meses - $hora_actual['1'];
               $cddia = $dias - $hora_actual['2'];
-              $cdhora = $horas - $hora_actual['3'];
+              $cdhora = $horas -$hora_actual['3'];
               $cdminutos = $minutos - $hora_actual['4'];
               $cdsegundos = $segundos - $hora_actual['5'];
               //vuelvo a armar la fecha de finalización del fotoreto para luego simplemente enviarla en la variable correspondiente
@@ -185,9 +192,46 @@ class photochallengeController extends Controller
 
 
 
+              $fecha_actual[0] = $cdano; //count down año
+              $fecha_actual[1] = $cdmes;
+              $fecha_actual[2] = $cddia;
+              $fecha_actual[3] = $cdhora;
+              $fecha_actual[4] = $cdminutos;
+              $fecha_actual[5] = $cdsegundos;
+
+              if($fecha_actual[0] < 0)
+                {
+                  $fecha_actual[0] = $fecha_actual[0] * -1;
+                }
+                if($fecha_actual[1] < 0)
+                  {
+                    $fecha_actual[1] = $fecha_actual[1] * -1;
+                  }
+                  if($fecha_actual[2] < 0)
+                    {
+                      $fecha_actual[2] = $fecha_actual[2] * -1;
+                    }
+                    if($fecha_actual[3] < 0)
+                      {
+                        $fecha_actual[3] = $fecha_actual[3] * -1;
+                      }
+                      if($fecha_actual[4] < 0)
+                        {
+                          $fecha_actual[4] = $fecha_actual[4] * -1;
+                        }
+                        if($fecha_actual[5] < 0)
+                          {
+                            $fecha_actual[5] = $fecha_actual[5] * -1;
+                          }
+
+
+*/
+
+              //retorno fecha actual junto con ambas vistas
             return view('controlpanel/admin/panel_admin')
             ->with(['fotoreto_activo' => $fotoreto_activo])
-            ->with(['fotoreto_iniciar' => $fotoreto_iniciar]);
+            ->with(['fotoreto_iniciar' => $fotoreto_iniciar])
+            ->with(['count_down' => $diff_date]);
           }
         else
           return view('controlpanel/admin/panel_admin')

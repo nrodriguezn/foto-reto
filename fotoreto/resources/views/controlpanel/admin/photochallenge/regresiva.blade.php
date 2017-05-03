@@ -15,7 +15,7 @@
 
 </style>
   <script  type="text/javascript">/*courtesy of onlineclock.net*/
-   countdown_dateFuture=new Date(2017,4,25,00,00,00);
+   countdown_dateFuture=new Date(2017,4, 0,00,00,00);
    function countdown_UpdateCount(){dateNow=new Date();
      timediff=Math.abs(countdown_dateFuture.getTime() - dateNow.getTime());
      delete dateNow;

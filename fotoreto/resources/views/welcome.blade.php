@@ -44,7 +44,7 @@
           @if(isset($photos))
               @foreach($photos as $n)
                 <section id="mostrar_fotos">
-                  <img src="imgParticipante/{{ $n->urlImg_photo }}" style="max-width: 500px;">
+                  <img src="imgParticipante/{{ $n->urlImg_photo }}" style="max-width: 530px;">
                   <h1>{{ $n->photo_name }}</h1>
                   <p>{{ $n-> description }} </p>
                 </section>
@@ -64,6 +64,46 @@
             </div>
           </section>
           @endif
+    @else
+
+
+
+    <section id="pricing_sec">
+    	<div class="container">
+    		<div class="row">
+    			<div class="col-lg-12 col-md-12 col-sm-12 col-xs12 ">
+    				<div class="title_sec">
+    					<h1> Ganadores del FotoReto Anterior</h1>
+
+    				</div>
+    			</div>
+    			<div class="col-lg-4 col-md-4 col-sm-12">
+    				<div class="sngl_pricing">
+    					<h2 class="title_bg_1">Primer Lugar</h2>
+    					<h3><span class="currency">#Nombre Ganador 1</span></h3>
+    					<img src="images/perfil.jpg" alt="" style="max-width: 330px; padding: 10px 0px;">
+    				</div>
+    			</div>
+    			<div class="col-lg-4 col-md-4 col-sm-12">
+    				<div class="sngl_pricing">
+    					<h2 class="title_bg_2">Segundo Lugar</h2>
+    					<h3><span class="currency">#Nombre Ganarod 2</span></h3>
+                <img src="images/perfil.jpg" alt="" style="max-width: 330px; padding: 10px 0px;">
+    				</div>
+    			</div>
+    			<div class="col-lg-4 col-md-4 col-sm-12">
+    				<div class="sngl_pricing">
+    					<h2 class="title_bg_3">Tercer Lugar</h2>
+    					<h3><span class="currency">#Nombre Ganador 3</span></h3>
+    				<img src="images/perfil.jpg" alt="" style="max-width: 330px; padding: 10px 0px;">
+    				</div>
+    			</div>
+    		</div>
+    	</div>
+    </section>
+
+
+
 
 
     @endif
@@ -419,61 +459,6 @@ End Portfolio Section -->
 </section>
  End Latest post Section -->
 
-<!-- start pricing Section
-<section id="pricing_sec">
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-12 col-md-12 col-sm-12 col-xs12 ">
-				<div class="title_sec">
-					<h1>Our Pricing Plan</h1>
-					<h2>WE’RE BRANDING & DIGITAL STUDIO FROM VIET NAM</h2>
-				</div>
-			</div>
-			<div class="col-lg-4 col-md-4 col-sm-12">
-				<div class="sngl_pricing">
-					<h2 class="title_bg_1">Basic</h2>
-					<h3><span class="currency">$</span>30<span class="monuth">/  mo</span></h3>
-					<ul>
-						<li>30 GB of Storage</li>
-						<li>30 GB of Storage</li>
-						<li>30 GB of Storage</li>
-						<li>30 GB of Storage</li>
-						<li><a href="" class="btn pricing_btn">Send</a></li>
-
-					</ul>
-				</div>
-			</div>
-			<div class="col-lg-4 col-md-4 col-sm-12">
-				<div class="sngl_pricing">
-					<h2 class="title_bg_2">Standerd</h2>
-					<h3><span class="currency">$</span>50<span class="monuth">/  mo</span></h3>
-					<ul>
-						<li>30 GB of Storage</li>
-						<li>30 GB of Storage</li>
-						<li>30 GB of Storage</li>
-						<li>30 GB of Storage</li>
-						<li><a href="" class="btn pricing_btn">Send</a></li>
-					</ul>
-				</div>
-			</div>
-			<div class="col-lg-4 col-md-4 col-sm-12">
-				<div class="sngl_pricing">
-					<h2 class="title_bg_3">Extended</h2>
-					<h3><span class="currency">$</span>90<span class="monuth">/  mo</span></h3>
-					<ul>
-						<li>30 GB of Storage</li>
-						<li>30 GB of Storage</li>
-						<li>30 GB of Storage</li>
-						<li>30 GB of Storage</li>
-						<li><a href="" class="btn pricing_btn">Send</a></li>
-					</ul>
-				</div>
-			</div>
-		</div>
-	</div>
-</section>
-End pricing Section -->
-
 
 <!-- start Happy Client Section
 <section id="clt_sec">
@@ -528,11 +513,10 @@ End pricing Section -->
 @include('layouts.footer')
 
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-        <script src="js/structure/vendor/jquery-1.11.2.min.js"></script>
+
 
 <script src="js/structure/isotope.pkgd.min.js"></script>
 <script src="js/structure/bootstrap.min.js"></script>
-<script src="js/structure/jquery-ui.js"></script>
 <script src="js/structure/appear.js"></script>
 <script src="js/structure/jquery.counterup.min.js"></script>
 <script src="js/structure/waypoints.min.js"></script>
@@ -546,7 +530,7 @@ End pricing Section -->
 
 <script src="js/structure/main.js"></script>
 
-<script src="showHide.js" type="text/javascript"></script>
+
 
 <script type="text/javascript">
 
