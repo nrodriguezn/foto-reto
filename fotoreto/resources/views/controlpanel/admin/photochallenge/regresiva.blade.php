@@ -1,54 +1,33 @@
-<br>
-<link href='http://fonts.googleapis.com/css?family=Autour+One' rel='stylesheet' type='text/css'>
-<style type='text/css'>
-.countdown_box{overflow: hidden;position: absolute; text-align: center;}
-.countdown_number{width: 51px;height: 26px;font-size:20px;text-align:center;color:#000;}
-.countdown_number_name{width: 51px;height: 26px;font-size:13px;text-transform:uppercase;color:#000;}
-#countdown_days{margin-left: 0px;margin-top: 10px;}
-#countdown_hours{margin-left: 50px;margin-top: 10px;}
-#countdown_mins{margin-left: 100px;margin-top: 10px;}
-#countdown_secs{margin-left: 150px;margin-top: 10px;}
-#countdown_number_name_secs{margin-left: 0px;margin-top: 30px;}
-#countdown_number_name_mins{margin-left: 50px;margin-top: 30px;}
-#countdown_number_name_hours{margin-left: 100px;margin-top: 30px;}
-#countdown_number_name_days{margin-left: 150px;margin-top: 30px;}
+<script>
+var end = new Date('05/7/2017 14:50:00');
 
-</style>
-  <script  type="text/javascript">/*courtesy of onlineclock.net*/
-   countdown_dateFuture=new Date(2017,4, 0,00,00,00);
-   function countdown_UpdateCount(){dateNow=new Date();
-     timediff=Math.abs(countdown_dateFuture.getTime() - dateNow.getTime());
-     delete dateNow;
-     if(timediff<0)
-      {document.getElementById('countdown_container').style.display="none";}
-      else {days=0;hours=0;mins=0;secs=0;out="";
-      timediff=Math.floor(timediff/1000);days=Math.floor(timediff/86400);
-      timediff=timediff % 86400;
-      hours=Math.floor(timediff/3600);
-      timediff=timediff % 3600;
-      mins=Math.floor(timediff/60);
-      timediff=timediff % 60;
-      secs=Math.floor(timediff);
-      if(document.getElementById('countdown_container'))
-      {document.getElementById('countdown_days').innerHTML=days;
-      document.getElementById('countdown_hours').innerHTML=hours;
-      document.getElementById('countdown_mins').innerHTML=mins;
-      document.getElementById('countdown_secs').innerHTML=secs;}
-      setTimeout("countdown_UpdateCount()", 1000);}}
-      window.onload=function()
-      {countdown_UpdateCount();}</script>
-      <div id="countdown_container">
-        <div id="countdown_days" class="countdown_box countdown_number">
+    var _second = 1000;
+    var _minute = _second * 60;
+    var _hour = _minute * 60;
+    var _day = _hour * 24;
+    var timer;
 
-        </div>
-        <div id="countdown_hours" class="countdown_box countdown_number">
+    function showRemaining() {
+        var now = new Date();
+        var distance = end - now;
+        if (distance < 0) {
 
-        </div><div id="countdown_mins" class="countdown_box countdown_number">
+            clearInterval(timer);
+            document.getElementById('countdown').innerHTML = 'EXPIRED!';
 
-        </div><div id="countdown_secs" class="countdown_box countdown_number">
+            return;
+        }
+        var days = Math.floor(distance / _day);
+        var hours = Math.floor((distance % _day) / _hour);
+        var minutes = Math.floor((distance % _hour) / _minute);
+        var seconds = Math.floor((distance % _minute) / _second);
 
-        </div><div id="countdown_number_name_secs" class="countdown_box countdown_number_name">Dias</div>
-        <div id="countdown_number_name_mins" class="countdown_box countdown_number_name">Hr</div>
-        <div id="countdown_number_name_hours" class="countdown_box countdown_number_name">Min</div>
-        <div id="countdown_number_name_days" class="countdown_box countdown_number_name">Seg</div>
-</div>
+        document.getElementById('countdown').innerHTML = days + 'days ';
+        document.getElementById('countdown').innerHTML += hours + 'hrs ';
+        document.getElementById('countdown').innerHTML += minutes + 'mins ';
+        document.getElementById('countdown').innerHTML += seconds + 'secs';
+    }
+
+    timer = setInterval(showRemaining, 1000);
+</script>
+<div id="countdown"></div>

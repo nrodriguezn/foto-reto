@@ -154,28 +154,6 @@ class photochallengeController extends Controller
 
         $fotoreto_iniciar =  photochallenge::all()->sortByDesc("id");;
         if($fotoreto_activo = DB::select('select * from photochallenges where status = 1')){ //retorna si hay fotoretos activos
-
-          function multiexplode ($delimiters,$string) {
-
-              $ready = str_replace($delimiters, $delimiters[0], $string);
-              $launch = explode($delimiters[0], $ready);
-              return  $launch;
-          }
-
-            $fecha = getdate();  //obtengo la fecha y hora actual
-
-
-            $hora_actual = array(     //las guardo en un arreglo
-              0 => $fecha['year'],
-              1 => $fecha['mon'],
-              2 => $fecha['mday'],
-              3 => $fecha['hours'],
-              4 => $fecha['minutes'],
-              5 => $fecha['seconds']
-            );
-
-            $photochallengeController->diferencia_fechas($fecha);
-
 /*
               //separo la fecha obtenida de la base de datos... end_date
             list($ano, $meses ,$dias, $horas, $minutos, $segundos) = multiexplode(array("-",":", " "), $fotoreto_activo[0]->end_date);
@@ -188,44 +166,23 @@ class photochallengeController extends Controller
               $cdminutos = $minutos - $hora_actual['4'];
               $cdsegundos = $segundos - $hora_actual['5'];
               //vuelvo a armar la fecha de finalización del fotoreto para luego simplemente enviarla en la variable correspondiente
-
-
-
-
-              $fecha_actual[0] = $cdano; //count down año
-              $fecha_actual[1] = $cdmes;
-              $fecha_actual[2] = $cddia;
-              $fecha_actual[3] = $cdhora;
-              $fecha_actual[4] = $cdminutos;
-              $fecha_actual[5] = $cdsegundos;
-
-              if($fecha_actual[0] < 0)
-                {
-                  $fecha_actual[0] = $fecha_actual[0] * -1;
-                }
-                if($fecha_actual[1] < 0)
-                  {
-                    $fecha_actual[1] = $fecha_actual[1] * -1;
-                  }
-                  if($fecha_actual[2] < 0)
-                    {
-                      $fecha_actual[2] = $fecha_actual[2] * -1;
-                    }
-                    if($fecha_actual[3] < 0)
-                      {
-                        $fecha_actual[3] = $fecha_actual[3] * -1;
-                      }
-                      if($fecha_actual[4] < 0)
-                        {
-                          $fecha_actual[4] = $fecha_actual[4] * -1;
-                        }
-                        if($fecha_actual[5] < 0)
-                          {
-                            $fecha_actual[5] = $fecha_actual[5] * -1;
-                          }
-
-
 */
+            $datetime1 = new \DateTime(' ',new \DateTimeZone('America/Mexico_City'));
+            $datetime1->getTimestamp();
+            $datetime2 = new \DateTime($fotoreto_activo[0]->end_date);
+              $diff_date= $datetime1->diff($datetime2);
+
+
+              $date_diff = array(     //las guardo en un arreglo
+                0 => $diff_date -> y,
+                1 => $diff_date -> m,
+                2 => $diff_date -> d,
+                3 => $diff_date -> h,
+                4 => $diff_date -> i,
+                5 => $diff_date -> s
+              );
+              //dd($datetime1, $datetime2, $date_diff);
+            
 
               //retorno fecha actual junto con ambas vistas
             return view('controlpanel/admin/panel_admin')
