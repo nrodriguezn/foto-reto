@@ -179,11 +179,17 @@ class photoController extends photochallengeController
 
       }
       elseif($request -> rechazar){
-          dd('rechazar, por hacer esta seccion...TOO EASY, VERY VERY GOOD MY FRIEND');
+          $id = $request -> id_foto;
+          $url_img = DB::table('photos')->where('id', $id)->value('urlImg_photo');
+          if(Storage::disk('imgParticipante')->delete($url_img)){
+            if(DB::table('photos')->where('id', $id)->delete()){
+              return back()->with('msj', 'Foto Eliminada Correctamente');
+                }
+            }
+        else{
+          return back()->with('errormsj', 'Ha ocurrido un error, revisar base de datos y disk');
+        }
+        return back();
       }
-
-
     }
-
-
 }
