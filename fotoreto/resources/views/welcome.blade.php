@@ -32,9 +32,10 @@
     			<div class="col-lg-6 col-md-6 col-sm-6">
     				<div class="cnt_info">
     					<ul>
+                @if(isset($diff_date))
     						<li></i><p>{{ $photochallenge -> description }}</p></li>
-    						<li></i><p>Finaliza En: {{ $photochallenge-> end_date }}</p></li>
-
+    						<li></i><p>Finaliza En:  @include('controlpanel/admin/photochallenge/regresiva')</p></li>
+                @endif
     					</ul>
     				</div>
     			</div>

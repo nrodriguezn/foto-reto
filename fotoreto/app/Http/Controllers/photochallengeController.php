@@ -152,51 +152,63 @@ class photochallengeController extends Controller
     public function fotoreto_iniciar_finalizar()
     {
 
-        $fotoreto_iniciar =  photochallenge::all()->sortByDesc("id");;
+        $fotoreto_iniciar =  photochallenge::all()->sortByDesc("id");
         if($fotoreto_activo = DB::select('select * from photochallenges where status = 1')){ //retorna si hay fotoretos activos
-/*
-              //separo la fecha obtenida de la base de datos... end_date
-            list($ano, $meses ,$dias, $horas, $minutos, $segundos) = multiexplode(array("-",":", " "), $fotoreto_activo[0]->end_date);
 
-              //resto ambas fechas para obtener el tiempo restante
-              $cdano = $ano - $hora_actual['0'];
-              $cdmes = $meses - $hora_actual['1'];
-              $cddia = $dias - $hora_actual['2'];
-              $cdhora = $horas -$hora_actual['3'];
-              $cdminutos = $minutos - $hora_actual['4'];
-              $cdsegundos = $segundos - $hora_actual['5'];
-              //vuelvo a armar la fecha de finalización del fotoreto para luego simplemente enviarla en la variable correspondiente
-*/
-            $datetime1 = new \DateTime(' ',new \DateTimeZone('America/Mexico_City'));
-            $datetime1->getTimestamp();
-            $datetime2 = new \DateTime($fotoreto_activo[0]->end_date);
-              $diff_date= $datetime1->diff($datetime2);
+              $diff_date = photochallengeController::diferencia_date($fotoreto_activo[0]);
+
+                  //retorno fecha actual junto con ambas vistas
+                return view('controlpanel/admin/panel_admin')
+                ->with(['fotoreto_activo' => $fotoreto_activo])
+                ->with(['fotoreto_iniciar' => $fotoreto_iniciar])
+                ->with(['count_down' => $diff_date]);
+          }else                                                                 //si no hay fotoretos activos muestro la vista para iniciarlos
+                    return view('controlpanel/admin/panel_admin')
+                    ->with(['fotoreto_iniciar' => $fotoreto_iniciar]);
+    }
 
 
-              $date_diff = array(     //las guardo en un arreglo
-                0 => $diff_date -> y,
-                1 => $diff_date -> m,
-                2 => $diff_date -> d,
-                3 => $diff_date -> h,
-                4 => $diff_date -> i,
-                5 => $diff_date -> s
-              );
-              //dd($datetime1, $datetime2, $date_diff);
-            
+    public function diferencia_date($fotoreto_activo){                          //Devuelve diferencia de fechas y finaliza si es necesario
+          $datetime1 = new \DateTime(' ',new \DateTimeZone('America/Mexico_City'));
+          $datetime1->getTimestamp();                                                //Obtengo fecha actual
+          $datetime2 = new \DateTime($fotoreto_activo->end_date);                    //Obtengo fecha finaliza fotoreto acrivo
+           $diff_date= $datetime1->diff($datetime2);                                //Obtengo la diferencia entre los dos
 
-              //retorno fecha actual junto con ambas vistas
-            return view('controlpanel/admin/panel_admin')
-            ->with(['fotoreto_activo' => $fotoreto_activo])
-            ->with(['fotoreto_iniciar' => $fotoreto_iniciar])
-            ->with(['count_down' => $diff_date]);
-          }
-        else
-          return view('controlpanel/admin/panel_admin')
-            ->with(['fotoreto_iniciar' => $fotoreto_iniciar]);
+           if($diff_date->invert==1){                                                //FINALIZAR FOTORETO POR EXPIRACION DE FECHA  1= finalizo tiempo  0= queda tiempo
+             return photochallengeController::fotoreto_finalizar($fotoreto_activo->id);
+           }
+           else
+           return $diff_date;
+
+           /*  $date_diff = array(                                             //las guardo en un arreglo
+               0 => $diff_date -> y,
+               1 => $diff_date -> m,
+               2 => $diff_date -> d,
+               3 => $diff_date -> h,
+               4 => $diff_date -> i,
+               5 => $diff_date -> s
+             );
+             */
+    }
+
+    public function calcular_fecha($date_time2){  //la fecha que recibo es la del fotoreto activo
+      $datetime1 = new \DateTime(' ',new \DateTimeZone('America/Mexico_City'));
+      $datetime1->getTimestamp();                                       //Obtengo fecha actual
+      $datetime2 = new \DateTime($fotoreto_activo[0]->end_date);        //Obtengo fecha finaliza fotoreto acrivo
+        $diff_date= $datetime1->diff($datetime2);                       //Obtengo la diferencia entre los dos
+
+        $date_diff = array(                                             //las guardo en un arreglo
+          0 => $diff_date -> y,
+          1 => $diff_date -> m,
+          2 => $diff_date -> d,
+          3 => $diff_date -> h,
+          4 => $diff_date -> i,
+          5 => $diff_date -> s
+        );
     }
 
     public function fotoreto_finalizar($id){
-      dd($id);
+
       $photochallenge = Photochallenge::find($id);
       $photochallenge -> status = 0;
 

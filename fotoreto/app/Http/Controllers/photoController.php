@@ -14,7 +14,8 @@ use Illuminate\Support\Facades\Auth;
 
 use Illuminate\Support\Facades\DB;
 
-class photoController extends Controller
+
+class photoController extends photochallengeController
 {
     /**
      * Display a listing of the resource.
@@ -138,13 +139,14 @@ class photoController extends Controller
      */
     public function photochallenge_desktop_show()
     {
-      //  $photos = photo::all();   //traigo todas las fotos de photo
-      //  return view('welcome')->with(['photo'-> $photos]);  //las envio a welcome
-      $id = DB::table('photochallenges')->where('status',1)->value('id');
+
       $photochallenge = DB::table('photochallenges')->where('status',1)->first();
+      $id = $photochallenge->id;
 
-
-
+//Comprobamos la fecha
+        $diff_date = photochallengeController::diferencia_date($photochallenge);
+        //dd($diff_date);
+//fin comprobacion fecha
         if($photochallenge){// hay un fotoreto activo
           $photos = DB::table('photos')->where([['id_photochallenge',$id],['admin_acepted', 1]])->get();
 
@@ -153,8 +155,8 @@ class photoController extends Controller
 
           }
           else {  //hay un fotoreto activo con fotos autorizadas
-          
-            return view('welcome')->with(['photos' => $photos])->with(['photochallenge' => $photochallenge]);
+
+            return view('welcome')->with(['photos' => $photos])->with(['photochallenge' => $photochallenge])->with(['diff_date' => $diff_date]);
           }
         }
         else{//no hay ni un fotoreto activo
