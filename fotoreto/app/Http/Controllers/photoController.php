@@ -45,12 +45,14 @@ class photoController extends photochallengeController
      */
     public function store(Request $request)
     {
-      //validate request
+
+ //validate request
       $this->validate($request, [
         'name' => 'required',
         'description' => 'required',
         'urlImg' => 'required'
       ]);
+
           //  $fotoreto = DB::select('select * from photochallenges where status = 1');
             $fotoreto = DB::table('photochallenges')->latest()->value('id');
             $photo = new Photo;
@@ -79,10 +81,10 @@ class photoController extends photochallengeController
             luego será publicada');
           }
           else {
-            return back()->with('msj', 'Error');
+            return back()->with('errormsj', 'Error1');
           }
 
-          return back();
+          return back()->with('errormsj', 'Error2');
 
 
     }

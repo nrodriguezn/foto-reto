@@ -28,7 +28,7 @@
       <div class="alert alert-success" role="alert">{{ session('msj') }}</div>
       @endif
       @if(session()->has('errormsj'))
-      <div class="alert alert-danger" role="alert">Error al guardar los datos</div>
+      <div class="alert alert-danger" role="alert">{{ session('errormsj') }}</div>
       @endif
   <br><br>
 </div>
