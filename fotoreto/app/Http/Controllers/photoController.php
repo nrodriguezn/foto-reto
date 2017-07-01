@@ -141,15 +141,10 @@ class photoController extends photochallengeController
      */
     public function photochallenge_desktop_show()
     {
+        if($photochallenge = DB::table('photochallenges')->where('status',1)->first()){// hay un fotoreto activo
+          $id = $photochallenge->id;
+            $diff_date = photochallengeController::diferencia_date($photochallenge);
 
-      $photochallenge = DB::table('photochallenges')->where('status',1)->first();
-      $id = $photochallenge->id;
-
-//Comprobamos la fecha
-        $diff_date = photochallengeController::diferencia_date($photochallenge);
-        //dd($diff_date);
-//fin comprobacion fecha
-        if($photochallenge){// hay un fotoreto activo
           $photos = DB::table('photos')->where([['id_photochallenge',$id],['admin_acepted', 1]])->get();
 
           if(empty($photos[0])){ // no hay fotos pero si un fotoreto activo

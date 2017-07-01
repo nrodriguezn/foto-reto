@@ -21,7 +21,7 @@
     		<div class="row">
     			<div class="col-md-12">
     				<div class="title_sec">
-    					<h1>{{ $photochallenge->name }}</h1>
+    					<h1 >{{ $photochallenge->name }}</h1>
     				</div>
     			</div>
     			<div class="col-sm-6">
@@ -45,9 +45,9 @@
           @if(isset($photos))
               @foreach($photos as $n)
                 <section id="mostrar_fotos">
-                  <img src="imgParticipante/{{ $n->urlImg_photo }}" style="max-width: 530px;">
+                  <img src="imgParticipante/{{ $n->urlImg_photo }}" style="max-width: 530px;  ">
                   <h1>{{ $n->photo_name }}</h1>
-                  <p>{{ $n-> description }} </p>
+                  <p style="max-width: 520px;">{{ $n-> description }} </p>
                 </section>
               @endforeach
           @else

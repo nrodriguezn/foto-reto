@@ -1,2 +1,3 @@
 # foto-reto
-proyecto desarrollo web
+
+portal para competencias y contratacion de personas amantes de la fotografia
