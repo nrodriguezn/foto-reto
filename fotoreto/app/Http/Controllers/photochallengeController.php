@@ -174,15 +174,16 @@ class photochallengeController extends Controller
           $datetime1 = new \DateTime('',new \DateTimeZone('America/Santiago'));
           $datetime1->getTimestamp();                                                //Obtengo fecha actual
           $datetime2 = new \DateTime($fotoreto_activo->end_date, new \DateTimeZone('America/Santiago'));                    //Obtengo fecha finaliza fotoreto acrivo
-         $diff_date= $datetime1->diff($datetime2);
-          //$diff_date = $datetime2 -> diff($datetime1);
+         //$diff_date= $datetime1->diff($datetime2);
+          $diff_date = $datetime2 -> diff($datetime1);
 
                                          //Obtengo la diferencia entre los dos
-           dd($datetime1, $datetime2, $diff_date, $fotoreto_activo->end_date);
+          // dd($datetime1, $datetime2, $diff_date, $fotoreto_activo->end_date);
            //if($diff_date->invert==0){                         //FINALIZAR FOTORETO POR EXPIRACION DE FECHA  1= finalizo tiempo  0= queda tiempo
 
            if($diff_date->invert == 1){
-             return photochallengeController::fotoreto_finalizar($fotoreto_activo->id);
+             return back(); 
+             //return photochallengeController::fotoreto_finalizar($fotoreto_activo->id);
            }
            else
            return $diff_date;
