@@ -6,8 +6,18 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+<<<<<<< HEAD
     'CreateNoticiasTable' => $baseDir . '/database/migrations/2017_03_26_185033_create_noticias_table.php',
     'CreatePasswordResetsTable' => $baseDir . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
+=======
+    'CreateContactsTable' => $baseDir . '/database/migrations/2017_04_05_011307_create_contacts_table.php',
+    'CreateContractsTable' => $baseDir . '/database/migrations/2017_03_31_222157_create_contracts_table.php',
+    'CreateDirectionsTable' => $baseDir . '/database/migrations/2017_03_31_222046_create_directions_table.php',
+    'CreatePasswordResetsTable' => $baseDir . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
+    'CreatePhotochallengesTable' => $baseDir . '/database/migrations/2017_03_31_222434_create_photochallenges_table.php',
+    'CreatePhotosTable' => $baseDir . '/database/migrations/2017_03_31_222326_create_photos_table.php',
+    'CreateUserTypesTable' => $baseDir . '/database/migrations/2017_03_31_222121_create_user_types_table.php',
+>>>>>>> develop
     'CreateUsersTable' => $baseDir . '/database/migrations/2014_10_12_000000_create_users_table.php',
     'DatabaseSeeder' => $baseDir . '/database/seeds/DatabaseSeeder.php',
     'File_Iterator' => $vendorDir . '/phpunit/php-file-iterator/src/Iterator.php',
@@ -540,4 +550,8 @@ return array(
     'SebastianBergmann\\ResourceOperations\\ResourceOperations' => $vendorDir . '/sebastian/resource-operations/src/ResourceOperations.php',
     'SebastianBergmann\\Version' => $vendorDir . '/sebastian/version/src/Version.php',
     'Text_Template' => $vendorDir . '/phpunit/php-text-template/src/Template.php',
+<<<<<<< HEAD
+=======
+    'UserSeeder' => $baseDir . '/database/seeds/UserSeeder.php',
+>>>>>>> develop
 );

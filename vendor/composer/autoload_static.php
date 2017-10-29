@@ -4,7 +4,11 @@
 
 namespace Composer\Autoload;
 
+<<<<<<< HEAD
 class ComposerStaticInit85f0d0ce68536ce10cc30f0e0def40f2
+=======
+class ComposerStaticInit3d5af1445d3876dd47c079ce33cac3c5
+>>>>>>> develop
 {
     public static $files = array (
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
@@ -272,8 +276,18 @@ class ComposerStaticInit85f0d0ce68536ce10cc30f0e0def40f2
     );
 
     public static $classMap = array (
+<<<<<<< HEAD
         'CreateNoticiasTable' => __DIR__ . '/../..' . '/database/migrations/2017_03_26_185033_create_noticias_table.php',
         'CreatePasswordResetsTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
+=======
+        'CreateContactsTable' => __DIR__ . '/../..' . '/database/migrations/2017_04_05_011307_create_contacts_table.php',
+        'CreateContractsTable' => __DIR__ . '/../..' . '/database/migrations/2017_03_31_222157_create_contracts_table.php',
+        'CreateDirectionsTable' => __DIR__ . '/../..' . '/database/migrations/2017_03_31_222046_create_directions_table.php',
+        'CreatePasswordResetsTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
+        'CreatePhotochallengesTable' => __DIR__ . '/../..' . '/database/migrations/2017_03_31_222434_create_photochallenges_table.php',
+        'CreatePhotosTable' => __DIR__ . '/../..' . '/database/migrations/2017_03_31_222326_create_photos_table.php',
+        'CreateUserTypesTable' => __DIR__ . '/../..' . '/database/migrations/2017_03_31_222121_create_user_types_table.php',
+>>>>>>> develop
         'CreateUsersTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_000000_create_users_table.php',
         'DatabaseSeeder' => __DIR__ . '/../..' . '/database/seeds/DatabaseSeeder.php',
         'File_Iterator' => __DIR__ . '/..' . '/phpunit/php-file-iterator/src/Iterator.php',
@@ -806,15 +820,26 @@ class ComposerStaticInit85f0d0ce68536ce10cc30f0e0def40f2
         'SebastianBergmann\\ResourceOperations\\ResourceOperations' => __DIR__ . '/..' . '/sebastian/resource-operations/src/ResourceOperations.php',
         'SebastianBergmann\\Version' => __DIR__ . '/..' . '/sebastian/version/src/Version.php',
         'Text_Template' => __DIR__ . '/..' . '/phpunit/php-text-template/src/Template.php',
+<<<<<<< HEAD
+=======
+        'UserSeeder' => __DIR__ . '/../..' . '/database/seeds/UserSeeder.php',
+>>>>>>> develop
     );
 
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
+<<<<<<< HEAD
             $loader->prefixLengthsPsr4 = ComposerStaticInit85f0d0ce68536ce10cc30f0e0def40f2::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInit85f0d0ce68536ce10cc30f0e0def40f2::$prefixDirsPsr4;
             $loader->prefixesPsr0 = ComposerStaticInit85f0d0ce68536ce10cc30f0e0def40f2::$prefixesPsr0;
             $loader->classMap = ComposerStaticInit85f0d0ce68536ce10cc30f0e0def40f2::$classMap;
+=======
+            $loader->prefixLengthsPsr4 = ComposerStaticInit3d5af1445d3876dd47c079ce33cac3c5::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit3d5af1445d3876dd47c079ce33cac3c5::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit3d5af1445d3876dd47c079ce33cac3c5::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInit3d5af1445d3876dd47c079ce33cac3c5::$classMap;
+>>>>>>> develop
 
         }, null, ClassLoader::class);
     }
